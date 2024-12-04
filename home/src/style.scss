@@ -130,10 +130,10 @@ a {
 /* 定義色彩 */
 
 :root {
-  $primary-green:#acff6c;
-  --Neutral-grey:#b3b3b3;
-  --Neutral-Black:#2a2a2a;
-  --Neutral-White:#fff;
+  --primary-green:$primary-green;
+  --Neutral-grey:$grey;
+  --Neutral-Black:$Black;
+  --Neutral-White:$light;
 }
 
 body {
@@ -189,7 +189,7 @@ body {
   &:hover {
     background-color: rgba(181, 149, 255, 0.1);
     border-radius: 3px;
-    color: var($primary-green);
+    color: var(--primary-green);
   }
 }
 
@@ -226,7 +226,7 @@ body {
     display: flex;
   }
 
-  color: var($primary-green);
+  color: var(--primary-green);
   border: none;
   background: none;
   cursor: pointer;
@@ -237,7 +237,7 @@ body {
 .search-bar {
   display: flex;
   align-items: center;
-  border: 1.5px solid var($primary-green);
+  border: 1.5px solid var(--primary-green);
   border-radius: 5px;
   padding: 5px 10px;
   width: 300px;
@@ -292,7 +292,7 @@ body {
 }
 
 .article-title {
-  color: var($primary-green);
+  color: var(--primary-green);
   font-size: 20px;
   margin: 10px 0;
 }
