@@ -99,7 +99,7 @@ a {
 
 .member {
   display: flex;
-  color: #B595FF;
+  color: $primary-purple;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.2);
@@ -107,7 +107,7 @@ a {
   }
 
   a {
-    color: #B595FF;
+    color: $primary-purple;
     font-weight: 400;
 
     /* transform: ; */
@@ -130,10 +130,10 @@ a {
 /* 定義色彩 */
 
 :root {
-  --primary-green:$primary-green;
-  --Neutral-grey:$grey;
-  --Neutral-Black:$Black;
-  --Neutral-White:$light;
+  --primary-green:#acff6c;
+  --Neutral-grey:#B3B3B3;
+  --Neutral-Black:#2A2A2A;
+  --Neutral-White:#FFFFFF;
 }
 
 body {
