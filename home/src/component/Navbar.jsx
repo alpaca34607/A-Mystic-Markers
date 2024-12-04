@@ -1,4 +1,5 @@
-import "../css/style.css";
+import "../../css/style.css";
+import {Link} from "react-router-dom"
 
 
 function  Navbar() {
@@ -6,12 +7,12 @@ function  Navbar() {
     <header className="Topbar">
       <div className="Topbar-right">
       {/* LOGO 圖標 */} 
-        <a href="#forum">
+        <Link to="/">
           <div className="logo">
             <img src="/images/LOGO.png" alt="神秘座標LOGO" />
             <h3 className="logoText">Mystic Markers</h3>
           </div>
-        </a>
+        </Link>
         {/* 登入/註冊 */}
         <div className="member">
           <a href="">登入</a> | <a href="">註冊</a> 
@@ -29,6 +30,15 @@ function  Navbar() {
           <img src="/images/menu.png" alt="menu" />
         </a>
        {/* menu待補 */}
+       <div id="menu">
+                        
+                        <ul>
+                          <li><Link to='/Story'>怪談博物館</Link></li>
+                          <li><Link to='/Map'>靈異導航</Link></li>
+                          <li><Link to='/Forum'>靈異論壇</Link></li>
+                          <li><Link to='/Contact'>聯絡我們</Link></li>
+                        </ul>
+                </div> 
       </nav>
     </header>
   );
