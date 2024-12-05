@@ -137,21 +137,22 @@ textarea {
     border-radius: 99px;//加圓角時不加上下按鈕才能有圓角
   }
   ::-webkit-scrollbar-button { //上下按鈕
-    background: $lesser-3;
+    background: $grey;
     width: 12px;//卷軸按鈕寬
     height: 12px;//卷軸按鈕高
   }
   ::-webkit-scrollbar-thumb { //卷軸手柄
-    background: $lesser-4;
+    background: transparent;
+    border: 1px solid $primary-purple ;
     
   }
   ::-webkit-scrollbar-track { //滾動條的軌道，會覆蓋scrollbar底色
-    background: $light;
+    background: $deep;
   }
   ::-webkit-scrollbar-corner { //直橫軸交集的小缺角顏色
-    background: $lesser-3;
+    background: $grey;
   }
   ::-webkit-resizer{  //多行填字欄位右下縮放框框按鈕
-    background: $lesser-4;
+    background: $primary-green;
 
   }

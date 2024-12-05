@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Map from "./pages/Map";
 import Contact from "./pages/Contact";
 import Forum from "./pages/Forum";
+import GlowingText from "./component/GlowingText";
 
 function App() {
  
@@ -27,7 +28,9 @@ function App() {
           <a href="./index.html">
           <img id="mark" src="/images/LOGO.svg" alt="神秘座標"  />
             <img  src="/images/logo_XL.svg" alt="神秘座標" />
-            <p>MYSTIC MARKERS</p>
+            <GlowingText Text="MYSTIC MARKERS"/>
+            
+            
           </a>
         </div>
         

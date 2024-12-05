@@ -131,25 +131,26 @@ textarea {
 }
 
 ::-webkit-scrollbar-button {
-  background: #cdaaab;
+  background: #B3B3B3;
   width: 12px;
   height: 12px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #8f6b6b;
+  background: transparent;
+  border: 1px solid #B595FF;
 }
 
 ::-webkit-scrollbar-track {
-  background: #FFFFFF;
+  background: #2A2A2A;
 }
 
 ::-webkit-scrollbar-corner {
-  background: #cdaaab;
+  background: #B3B3B3;
 }
 
 ::-webkit-resizer {
-  background: #8f6b6b;
+  background: #acff6c;
 }
 
 @keyframes rotate {
@@ -368,8 +369,9 @@ body {
 }
 .home .banner .logoXL img {
   width: 422px;
+  animation: glowEffect 5s linear infinite;
 }
-.home .banner .logoXL p {
+.home .banner .logoXL .glowing-text {
   color: #acff6c;
   font-family: "Inter", serif;
   font-size: 12px;
@@ -380,10 +382,35 @@ body {
 .home .banner .logoXL #mark {
   width: 80px;
   margin-left: 318px;
-  animation: rotateLOGO 3S linear infinite;
+  animation: rotateY 6s ease-in-out infinite, glowEffect 5s linear infinite; /* 設定動畫 */
 }
-@keyframes rotateLOGO {
+
+/* 動畫效果 */
+/* glowEffect 5s linear infinite(發光效果放入css) */
+@keyframes glowEffect {
   0% {
-    transform: rotate(0deg);
+    filter: drop-shadow(0 0 5px #acff6c) drop-shadow(0 0 10px #acff6c);
+    opacity: 1;
   }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(172, 255, 108, 0.3764705882)) drop-shadow(0 0 30px rgba(172, 255, 108, 0.3764705882));
+    opacity: 1;
+  }
+  100% {
+    filter: drop-shadow(0 0 5px #acff6c) drop-shadow(0 0 15px #acff6c);
+    opacity: 1;
+  }
+}
+/* animation:  rotateY 6s ease-in-out infinitee(旋轉效果放入css) */
+@keyframes rotateY {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+.glowing-text span {
+  position: relative;
+  animation: glowEffect 1.5s ease-in-out infinite;
 }/*# sourceMappingURL=style.css.map */
