@@ -38,7 +38,7 @@ function App() {
 
           <div className="intro1">
             <div className='door'>
-            <figure> <img src="/images/door.png" /></figure>
+              <figure> <img src="/images/door.png" /></figure>
               <div id="intro_Q">
                 <img src="/images/intro_Q.svg" alt="準備好要探索未知了嗎?" />
                 <p>
@@ -49,10 +49,39 @@ function App() {
                   準備好面對未知的恐懼吧！<br />
                 </p>
               </div>
+            </div>
+          </div>
 
+          <div className="intro2">
+            <header className="title">
+              <h2>怪談博物館</h2>
+              <h3>精選靈異故事、都市傳說，帶你進入未知世界，享受身歷其境的驚悚與神秘氛圍。</h3>
+            </header>
+
+            {/* 中紙 */}
+            <div className="mid">
+              <img src="/images/paper_1.png" alt="" />
+            </div>
+
+
+            {/* 遠紙 */}
+            <div className="far">
+              <img src="/images/paper_2.png" alt="" />
+            </div>
+
+            {/* 前景相簿 */}
+            <div className="close">
 
             </div>
           </div>
+
+
+
+          <div className="intro3">
+
+          </div>
+
+
 
 
         </section>

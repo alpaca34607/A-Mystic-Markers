@@ -1,6 +1,6 @@
 @use 'reset';
-@use 'variables' as *;
-@use 'function' as *;
+@use 'variables'as *;
+@use 'function'as *;
 @use 'keyframes';
 
 
@@ -220,7 +220,8 @@ body {
     background-repeat: no-repeat;
 
     width: 100%;
-    min-height: 160vh;
+    min-height: 130vh;
+
 
     // border:1px solid #B3B3B3;
 
@@ -263,37 +264,40 @@ body {
 
   }
 
+  @media (max-width:1920px) {
+    .banner {
+      height: calc(100vh*1200/1920);
+    }
+  }
+
   .intro {
-
-
     width: 100%;
-
-
 
     .intro1 {
       display: flex;
       justify-content: center;
+      position: relative;
+      z-index: 10;
+      min-height: 100vh;
 
       .door {
         position: relative;
         width: 940px;
         height: 100vh;
-        
-        
 
-
-
+        figure {
+          animation: glowEffect-W 3s linear infinite;
+        }
 
         img {
           width: 100%;
           height: auto;
-          
         }
 
         #intro_Q {
           position: absolute;
-          top:0;
-          right:20px;
+          top: 0;
+          right: 20px;
           width: 355px;
           display: column;
 
@@ -301,11 +305,82 @@ body {
             margin-top: 30px;
             margin-left: 21px;
           }
+        }
+      }
+    }
 
+    .intro2 {
+      
+      top: 0;
+      /* 保持在 intro1 下面 */
+
+      perspective: 1000px;
+      perspective-origin: center;
+      mix-blend-mode: lighten;
+
+      margin-top: 0;
+      height: 100vh;
+      isolation: isolate;
+      transform-style: preserve-3d;
+      text-align: center;
+
+      .title {
+        @extend %box-center;
+        flex-direction: column;
+
+        position: relative;
+        margin-top: 60px;
+        left: 0px;
+        margin-bottom: $interval-l;
+        z-index: 2;
+      }
+
+
+
+      .mid {
+        transform: translateZ(-2.5px) translateY(-3.5vh) scale(1.5);
+        z-index: 1;
+        position: absolute;
+        top: -60vh;
+        left: 100px;
+    
+        mix-blend-mode: lighten;
+        // border: #acff6c 1px solid;
+
+        img {
+          width: 100%;
+          overflow: visible;
+          object-fit: cover;
+          opacity: 100%;
+        
+
+
+
+        }
+
+      }
+
+
+      .far {
+        transform: translateZ(-.5px) translateY(-1vh) scale(1.5);
+        position: relative;
+       
+        // border: #ffffff 1px solid;
+
+        img {
+          position: absolute;
+          top: -40vh;
+          left: 0;
+          width: 100%;
+          z-index: -2;
+          overflow: hidden;
+          object-fit: cover;
+          opacity: 100%;
         }
       }
     }
   }
+
 }
 
 
@@ -314,20 +389,40 @@ body {
 
 @keyframes glowEffect {
   0% {
-    filter: drop-shadow(0 0 5px #acff6c) drop-shadow(0 0 10px #acff6c);
+    filter: drop-shadow(0 0 5px #acff6c) drop-shadow(0 0 10px #acff6cac);
     opacity: 1;
   }
 
   50% {
-    filter: drop-shadow(0 0 20px #acff6c60) drop-shadow(0 0 30px #acff6c60);
-    opacity: 1;
+    filter: drop-shadow(0 0 20px #acff6c26) drop-shadow(0 0 30px #acff6c0b);
+    opacity: 0.8;
   }
 
   100% {
-    filter: drop-shadow(0 0 5px #acff6c) drop-shadow(0 0 10px #acff6c);
+    filter: drop-shadow(0 0 5px #acff6c) drop-shadow(0 0 10px #acff6cac);
     opacity: 1;
   }
 }
+
+/* 動畫效果 */
+/* glowEffect 5s linear infinite(發光效果放入css) */
+@keyframes glowEffect-W {
+  0% {
+    filter: drop-shadow(0 0 5px #ffffff) drop-shadow(0 0 10px #ffffff54);
+    opacity: 1;
+  }
+
+  50% {
+    filter: drop-shadow(0 0 20px #acff6c26) drop-shadow(0 0 30px #acff6c0b);
+    opacity: 0.5;
+  }
+
+  100% {
+    filter: drop-shadow(0 0 5px #ffffff) drop-shadow(0 0 10px #ffffff54);
+    opacity: 1;
+  }
+}
+
 
 /* 設定字輪流變色時使用 */
 .glowing-text span {
