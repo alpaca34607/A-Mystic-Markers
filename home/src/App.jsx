@@ -28,9 +28,8 @@ function App() {
           <a href="./index.html">
           <img id="mark" src="/images/LOGO.svg" alt="神秘座標"  />
             <img  src="/images/logo_XL.svg" alt="神秘座標" />
-            <GlowingText Text="MYSTIC MARKERS"/>
-            
-            
+            <p><GlowingText text="MYSTIC MARKERS"/></p>
+                        
           </a>
         </div>
         

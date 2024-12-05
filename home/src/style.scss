@@ -233,10 +233,9 @@ body {
 
         width: 422px;
         animation: glowEffect 5s linear infinite
-
       }
 
-      .glowing-text {
+      p {
 
         color: $primary-green;
         font-family: "Inter", serif;
@@ -247,13 +246,15 @@ body {
 
       }
 
+
       #mark {
         width: 80px;
         margin-left: 318px;
-        
-        animation:  rotateY 6s ease-in-out infinite, glowEffect 5s linear infinite; /* 設定動畫 */
+
+        animation: rotateY 6s ease-in-out infinite, glowEffect 5s linear infinite;
+        /* 設定動畫 */
       }
-    
+
 
     }
 
@@ -268,17 +269,24 @@ body {
 
 @keyframes glowEffect {
   0% {
-    filter: drop-shadow(0 0 5px #acff6c) drop-shadow(0 0 10px #acff6c) ; 
+    filter: drop-shadow(0 0 5px #acff6c) drop-shadow(0 0 10px #acff6c);
     opacity: 1;
   }
+
   50% {
-    filter: drop-shadow(0 0 20px #acff6c60) drop-shadow(0 0 30px #acff6c60) ; 
+    filter: drop-shadow(0 0 20px #acff6c60) drop-shadow(0 0 30px #acff6c60);
     opacity: 1;
   }
+
   100% {
-    filter: drop-shadow(0 0 5px #acff6c) drop-shadow(0 0 15px #acff6c); 
+    filter: drop-shadow(0 0 5px #acff6c) drop-shadow(0 0 10px #acff6c);
     opacity: 1;
   }
+}
+/* 設定字輪流變色時使用 */
+.glowing-text span {
+  position: relative;
+  animation: glowEffect 1.5s ease-in-out infinite,colorChange 2s ease-in-out infinite;
 }
 
 /* animation:  rotateY 6s ease-in-out infinitee(旋轉效果放入css) */
@@ -292,10 +300,21 @@ body {
   }
 }
 
-.glowing-text span {
-  position: relative;
-  animation: glowEffect 1.5s ease-in-out infinite;
+/* 文字變色 */
+@keyframes colorChange {
+  0% {
+    color: $primary-green;
+    ;
+  }
+  33% {
+    color: #ffffff; 
+  }
+  66% {
+    color: #deff67;;
+  }
+  100% {
+    color: $primary-green;
+    ; 
+  }
+
 }
-
-
-

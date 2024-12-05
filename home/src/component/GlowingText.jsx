@@ -1,10 +1,13 @@
 import React from 'react';
-import  "../../css/style.css";
+import "../../css/style.css";
 
 const GlowingText = ({ text }) => {
+  // 確保 text 是字串，如果不是，則設為空字串
+  const letters = typeof text === 'string' ? text.split('') : [];
+
   return (
     <div className="glowing-text">
-      {text.split('').map((letter, index) => (
+      {letters.map((letter, index) => (
         <span key={index} style={{ animationDelay: `${index * 0.3}s` }}>
           {letter}
         </span>

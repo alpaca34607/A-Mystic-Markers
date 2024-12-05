@@ -371,7 +371,7 @@ body {
   width: 422px;
   animation: glowEffect 5s linear infinite;
 }
-.home .banner .logoXL .glowing-text {
+.home .banner .logoXL p {
   color: #acff6c;
   font-family: "Inter", serif;
   font-size: 12px;
@@ -382,7 +382,8 @@ body {
 .home .banner .logoXL #mark {
   width: 80px;
   margin-left: 318px;
-  animation: rotateY 6s ease-in-out infinite, glowEffect 5s linear infinite; /* 設定動畫 */
+  animation: rotateY 6s ease-in-out infinite, glowEffect 5s linear infinite;
+  /* 設定動畫 */
 }
 
 /* 動畫效果 */
@@ -397,10 +398,16 @@ body {
     opacity: 1;
   }
   100% {
-    filter: drop-shadow(0 0 5px #acff6c) drop-shadow(0 0 15px #acff6c);
+    filter: drop-shadow(0 0 5px #acff6c) drop-shadow(0 0 10px #acff6c);
     opacity: 1;
   }
 }
+/* 設定字輪流變色時使用 */
+.glowing-text span {
+  position: relative;
+  animation: glowEffect 1.5s ease-in-out infinite, colorChange 2s ease-in-out infinite;
+}
+
 /* animation:  rotateY 6s ease-in-out infinitee(旋轉效果放入css) */
 @keyframes rotateY {
   0% {
@@ -410,7 +417,18 @@ body {
     transform: rotateY(360deg);
   }
 }
-.glowing-text span {
-  position: relative;
-  animation: glowEffect 1.5s ease-in-out infinite;
+/* 文字變色 */
+@keyframes colorChange {
+  0% {
+    color: #acff6c;
+  }
+  33% {
+    color: #ffffff;
+  }
+  66% {
+    color: #deff67;
+  }
+  100% {
+    color: #acff6c;
+  }
 }/*# sourceMappingURL=style.css.map */
