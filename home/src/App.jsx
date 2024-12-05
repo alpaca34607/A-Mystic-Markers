@@ -10,7 +10,7 @@ import Forum from "./pages/Forum";
 import GlowingText from "./component/GlowingText";
 
 function App() {
- 
+
   return (
     <>
       {/* <Routes>
@@ -21,19 +21,23 @@ function App() {
         <Route path="/news" element={<Contact/>}></Route>
       </Routes>       */}
       <main className="home">
-      <section className="banner">
-        <Navbar />
-        
-        <div className="logoXL">
-          <a href="./index.html">
-          <img id="mark" src="/images/LOGO.svg" alt="神秘座標"  />
-            <img  src="/images/logo_XL.svg" alt="神秘座標" />
-            <p><GlowingText text="MYSTIC MARKERS"/></p>
-                        
-          </a>
-        </div>
-        
-      </section>
+        <section className="banner">
+          <Navbar />
+
+          <div className="logoXL">
+            <a href="./index.html">
+              <img id="mark" src="/images/LOGO.svg" alt="神秘座標" />
+              <img src="/images/logo_XL.svg" alt="神秘座標" />
+              <p><GlowingText text="MYSTIC MARKERS" /></p>
+
+            </a>
+          </div>
+        </section>
+        <section className="intro">
+          <img id="door" src="/images/door.png" alt="神秘座標" />
+          
+
+        </section>
       </main>
     </>
   );
