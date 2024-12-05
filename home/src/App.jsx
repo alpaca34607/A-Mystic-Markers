@@ -12,23 +12,27 @@ function App() {
  
   return (
     <>
-      <Navbar />
-      <Routes>
+      {/* <Routes>
       <Route path="/" element={<Home/>}></Route>
         <Route path="/about" element={<Story/>}></Route>
         <Route path="/news" element={<Map/>}></Route>
         <Route path="/news" element={<Forum/>}></Route>
         <Route path="/news" element={<Contact/>}></Route>
-      </Routes>
-      <section id="homebanner">
-        <div id="logoXL">
+      </Routes>       */}
+      <main className="home">
+      <section className="banner">
+        <Navbar />
+        
+        <div className="logoXL">
           <a href="./index.html">
-            <img src="/images/logo_XL.svg" alt="神秘座標" title="神秘座標" />
-            <p id="ENtitle-s">MYSTIC MARKERS</p>
+          <img id="mark" src="/images/LOGO.svg" alt="神秘座標"  />
+            <img  src="/images/logo_XL.svg" alt="神秘座標" />
+            <p>MYSTIC MARKERS</p>
           </a>
         </div>
-
+        
       </section>
+      </main>
     </>
   );
 }

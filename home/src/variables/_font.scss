@@ -18,7 +18,7 @@ $font-medium-14: (
   font-family: $Chinese,
   font-weight: 500,
   font-size: 0.875rem, // 14px
-  letter-spacing: 10%, // 10%
+  letter-spacing: 0.1rem, // 10%
 );
 
 $font-medium-16: (
@@ -31,7 +31,7 @@ $font-regular-16: (
   font-family: $Chinese,
   font-weight: 400,
   font-size: 1rem, // 16px
-  letter-spacing: 5%, // 5%
+  letter-spacing: 0.05rem, // 5%
   line-height: 200%, // 200%
 );
 
@@ -39,14 +39,14 @@ $font-medium-18: (
   font-family: $Chinese,
   font-weight: 500,
   font-size: 1.125rem, // 18px
-  letter-spacing: 15%, // 15%
+  letter-spacing: 0.18rem, // 15%
   line-height: 150%, // 150%
 );
 
 $font-medium-26: (
   font-family: $Chinese,
   font-weight: 500,
-  font-size: 1.625rem, // 26px
+  font-size: 1.6rem, // 26px
 );
 
 $font-medium-24: (
@@ -65,14 +65,14 @@ $font-medium-48: (
   font-family: $Chinese,
   font-weight: 500,
   font-size: 3rem, // 48px
-  letter-spacing: 160%, // 160%
+  letter-spacing: 0.2rem, // 16%
 );
 
 $font-EN-medium-40 :(
-    font-family:$EN,
-    font-optical-sizing: auto,
-    font-weight: 500,
-    font-style: italic,
+  font-family: "Playfair Display",
+  font-optical-sizing: auto,
+  font-weight: 500,
+  font-style: italic,
 
 )
 

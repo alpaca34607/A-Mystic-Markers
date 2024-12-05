@@ -9,7 +9,7 @@ function  Navbar() {
       {/* LOGO 圖標 */} 
         <Link to="/">
           <div className="logo">
-            <img src="/images/LOGO.png" alt="神秘座標LOGO" />
+            <img src="/images/LOGO.svg" alt="神秘座標LOGO" />
             <h3 className="logoText">Mystic Markers</h3>
           </div>
         </Link>
@@ -21,16 +21,16 @@ function  Navbar() {
       {/* 通知/會員管理/MENU */}
       <nav className="navigation">
         <a href="#news">
-          <img src="/images/news.png" alt="news" />
+          <img id='news' src="/images/news.svg" alt="news" />
         </a>
-        <a href="#Group">
-          <img src="/images/Group.png" alt="Group" />
+        <a href ="#Group">
+          <img id='Group'src="/images/Group.svg" alt="Group" />
         </a>
         <a href="#menu">
-          <img src="/images/menu.png" alt="menu" />
+          <img id='menu' src="/images/menu.svg" alt="menu" />
         </a>
        {/* menu待補 */}
-       <div id="menu">
+       {/* <div id="menu">
                         
                         <ul>
                           <li><Link to='/Story'>怪談博物館</Link></li>
@@ -38,7 +38,7 @@ function  Navbar() {
                           <li><Link to='/Forum'>靈異論壇</Link></li>
                           <li><Link to='/Contact'>聯絡我們</Link></li>
                         </ul>
-                </div> 
+                </div>  */}
       </nav>
     </header>
   );
