@@ -1,0 +1,475 @@
+@use 'reset';
+@use 'variables' as *;
+@use 'function' as *;
+@use 'keyframes';
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+TC:wght@100..900&family=Playfair+Display:ital,wght@1,500&display=swap');
+
+
+/* 重置字體 */
+
+body {
+  font-family: $Chinese;
+
+  /* 系統預設的無襯線字 */
+  font-size: 100%;
+  line-height: 1.5;
+
+  /* 行高 */
+  background-color: #333;
+}
+
+/* 重置標題字重 */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+
+  /* 一般粗細 */
+}
+
+/* 重置清單符號 */
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* 重置圖片 */
+
+img {
+  display: block;
+  width: 100%;
+
+  /* 滿版 */
+  max-width: 100%;
+
+  /*不一定要寫*/
+  height: auto;
+
+  /*不一定要寫*/
+}
+
+/* 重置連接 */
+
+a {
+  display: block;
+
+  /* 將 a 都變成 block(區塊) 才能設定某區塊範圍都有 a 連結可以按*/
+  /* 預設是 inline 改成 block。才能設定間距以及寬高 */
+  /* 除非有文字需求才會用原本預設 inline */
+  text-decoration: none;
+
+  /*底線拿掉*/
+  color: white;
+
+  /* 基本超連結顏色 */
+}
+
+/* Menu */
+
+.Topbar {
+  margin: 0;
+  margin-top: 0;
+  width: 100%;
+  height: 110px;
+  display: flex;
+  padding: 10px 0px;
+  align-items: flex-end;
+  justify-content: space-between;
+  /* border: 1px solid rgb(207, 202, 202); */
+}
+
+.logo {
+  width: 240px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+  }
+
+  img {
+    width: 40px;
+    margin: 8px
+  }
+}
+
+.logoText {
+  font-family: 'Roboto';
+  font-size: 28px;
+  color: $primary-green;
+
+}
+
+.Topbar-right {
+  display: flex;
+  padding: 0;
+  align-items: center;
+  margin-left: 115px;
+
+}
+
+.member {
+  display: flex;
+  color: $primary-purple;
+  margin-left: 20px;
+  margin: 8px;
+  margin-bottom: 5px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+  }
+
+  a {
+    color: $primary-purple;
+    font-weight: 400;
+
+    /* transform: ; */
+  }
+}
+
+.navigation {
+  width: 277px;
+  display: flex;
+  align-items: center;
+
+
+  /* justify-content: ; */
+  #Group {
+
+    margin: 10px;
+    width: 26px;
+  }
+
+  #menu {
+
+    width: 64px;
+    margin-left: 15px;
+
+  }
+}
+
+
+
+
+/* 下面指令 */
+
+/* 定義色彩 */
+
+:root {
+  --primary-green: #acff6c;
+  --Neutral-grey: #B3B3B3;
+  --Neutral-Black: #2A2A2A;
+  --Neutral-White: #FFFFFF;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  background-color: var(--Neutral-Black);
+
+  font-family: 'Noto Sans TC', sans-serif;
+
+}
+
+.top-bar {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-button {
+  div {
+    display: flex;
+  }
+
+  color: var(--primary-green);
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 18px;
+  letter-spacing: 2.7px;
+}
+
+/*HOME  */
+
+/*HOME  */
+
+.home {
+
+  .banner {
+    position: relative;
+    background-image: url('/images/home_banner.png');
+    background-size: 100%;
+    background-position: right top;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    min-height: 130vh;
+
+
+    // border:1px solid #B3B3B3;
+
+    .logoXL {
+      width: 30%;
+      margin-top: 130px;
+      margin-left: 132px;
+      display: flex;
+      justify-content: flex-end;
+
+
+      img {
+        margin: 0;
+        width: 100%;
+        animation: glowEffect 5s linear infinite
+      }
+
+      .p {
+
+        color: $primary-green;
+        font-family: "Inter", serif;
+        font-size: 12px;
+        letter-spacing: 18px;
+        margin-left: 46px;
+        margin-top: 20px;
+
+      }
+
+
+      #mark {
+        margin-left: auto;
+        position: relative;
+        width: 80px;
+        animation: rotateY 6s ease-in-out infinite, glowEffect 5s linear infinite;
+        /* 設定動畫 */
+      }
+
+
+    }
+
+  }
+
+  @media (max-width:1920px) {
+    .banner {
+      background-size: cover;
+      // height: calc(100vh*1200/1920);
+    }
+  }
+
+  .intro {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    perspective-origin: center;
+    position: relative;
+    background-color:$deep;
+    width: 100%; 
+    overflow-y: visible;
+    overflow-x: hidden;
+    mix-blend-mode: lighten;
+    height: 600vh;
+
+    #intro1 {
+      display: flex;
+      justify-content: center;
+     
+      .door {
+        position: relative;
+        width: 940px;
+        height: 100vh;
+
+        figure {
+          animation: glowEffect-W 3s linear infinite;
+          z-index: 3;
+        }
+
+
+        #intro_Q {
+          position: absolute;
+          top: 0;
+          right: 20px;
+          width: 355px;
+          display: column;
+
+          p {
+            margin-top: 30px;
+            margin-left: 21px;
+            @include font-style($font-regular-18);
+          }
+        }
+      }
+    }
+  }
+}
+
+#intro2 {
+      
+  top: 0;
+  /* 保持在 intro1 下面 */
+  mix-blend-mode: lighten;
+  margin-top: 0;
+  isolation: isolate;
+ 
+  text-align: center;
+
+  .title {
+    @extend %box-center;
+    flex-direction: column;
+
+    position: relative;
+    margin-top: 60px;
+    left: 0px;
+    margin-bottom: $interval-l;
+    z-index: 2;
+
+    h2{
+      @include font-style($font-medium-48);
+      color:#acff6c; 
+    }
+    h3{
+      @include font-style($font-medium-24);
+    }
+  }
+
+
+
+  .paper1 {
+    transform: translateZ(-2.5px) translateY(-3.5vh) scale(1.5);
+    z-index: 1;
+    position: absolute;
+    top: 40vh;
+    left: 100px;
+
+    mix-blend-mode: lighten;
+    // border: #acff6c 1px solid;
+
+    img {
+      width: 80%;
+      overflow-y: visible;
+      object-fit: cover;
+      opacity: 100%;
+    
+
+
+
+    }
+
+  }
+
+
+  .paper2{
+    transform: translateZ(-.5px) translateY(-1vh) scale(1.5);
+    position: absolute;
+    top: 90vh;
+    left: 0;
+    // border: #ffffff 1px solid;
+
+    img {
+      position: absolute;
+ 
+      width: 30%;
+      z-index: -2;
+      overflow-y: visible;
+      overflow-x: hidden;
+      object-fit: cover;
+      opacity: 100%;
+    }
+  }
+}
+
+
+
+/* 動畫效果 */
+/* glowEffect 5s linear infinite(發光效果放入css) */
+@keyframes glowEffect-W {
+  0% {
+    filter: drop-shadow(0 0 5px #ffffff) drop-shadow(0 0 10px #ffffff54);
+    opacity: 1;
+  }
+
+  50% {
+    filter: drop-shadow(0 0 20px #acff6c26) drop-shadow(0 0 30px #acff6c0b);
+    opacity: 0.5;
+  }
+
+  100% {
+    filter: drop-shadow(0 0 5px #ffffff) drop-shadow(0 0 10px #ffffff54);
+    opacity: 1;
+  }
+}
+
+@keyframes glowEffect {
+  0% {
+    filter: drop-shadow(0 0 5px#acff6c) drop-shadow(0 0 10px #acff6c54);
+    opacity: 1;
+  }
+
+  50% {
+    filter: drop-shadow(0 0 20px #ffffff85) drop-shadow(0 0 30px #ffffff0b);
+    opacity: 1;
+  }
+
+  100% {
+    filter: drop-shadow(0 0 5px#acff6c) drop-shadow(0 0 10px #acff6c54);
+    opacity: 1;
+  }
+}
+
+
+/* 設定字輪流變色時使用 */
+.glowing-text span {
+  position: relative;
+  animation: glowEffect 1.5s ease-in-out infinite, colorChange 2s ease-in-out infinite;
+}
+
+/* animation:  rotateY 6s ease-in-out infinitee(旋轉效果放入css) */
+@keyframes rotateY {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/* 文字變色 */
+@keyframes colorChange {
+  0% {
+    color: $primary-green;
+    ;
+  }
+
+  33% {
+    color: #ffffff;
+  }
+
+  66% {
+    color: #deff67;
+    ;
+  }
+
+  100% {
+    color: $primary-green;
+    ;
+  }
+
+}
