@@ -8,6 +8,7 @@ import Map from "./pages/Map";
 import Contact from "./pages/Contact";
 import Forum from "./pages/Forum";
 import GlowingText from "./component/GlowingText";
+import ParallaxComponent from "./component/PaperScroll";
 
 function App() {
 
@@ -28,7 +29,7 @@ function App() {
             <a href="./index.html">
               <img id="mark" src="/images/LOGO.svg" alt="神秘座標" />
               <img src="/images/logo_XL.svg" alt="神秘座標" />
-              <p><GlowingText text="MYSTIC MARKERS" /></p>
+              <div className="p"><GlowingText text="MYSTIC MARKERS" /></div>
 
             </a>
           </div>
@@ -36,9 +37,9 @@ function App() {
         <section className="intro">
 
 
-          <div className="intro1">
+          <div id="intro1">
             <div className='door'>
-            <figure> <img src="/images/door.png" /></figure>
+              <figure> <img src="/images/door.png" /></figure>
               <div id="intro_Q">
                 <img src="/images/intro_Q.svg" alt="準備好要探索未知了嗎?" />
                 <p>
@@ -49,13 +50,10 @@ function App() {
                   準備好面對未知的恐懼吧！<br />
                 </p>
               </div>
-
-
             </div>
           </div>
-
-
-        </section>
+          <ParallaxComponent/>
+   </section>
       </main>
     </>
   );
@@ -63,4 +61,3 @@ function App() {
 
 
 export default App;
-

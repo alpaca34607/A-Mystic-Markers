@@ -173,15 +173,16 @@ a {
 }
 
 body {
+  margin: 0;
+  padding: 0;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow: hidden;
   background-color: var(--Neutral-Black);
-  color: var(--Neutral-White);
+  color:$light;
   font-family: 'Noto Sans TC', sans-serif;
-}
 
-.forum-container {
-  padding: 20px 0px;
 }
-
 
 .top-bar {
 
@@ -211,16 +212,20 @@ body {
 
 /*HOME  */
 
+/*HOME  */
+
 .home {
+
   .banner {
     position: relative;
-    background-image: url('../public/images/home_banner.png');
+    background-image: url('/images/home_banner.png');
     background-size: 100%;
     background-position: right top;
     background-repeat: no-repeat;
 
     width: 100%;
-    min-height: 160vh;
+    min-height: 130vh;
+
 
     // border:1px solid #B3B3B3;
 
@@ -233,12 +238,12 @@ body {
 
 
       img {
-
+        margin: 0;
         width: 100%;
         animation: glowEffect 5s linear infinite
       }
 
-      p {
+      .p {
 
         color: $primary-green;
         font-family: "Inter", serif;
@@ -251,9 +256,9 @@ body {
 
 
       #mark {
+        margin-left: auto;
+        position: relative;
         width: 80px;
-        margin-left: 318px;
-
         animation: rotateY 6s ease-in-out infinite, glowEffect 5s linear infinite;
         /* 設定動畫 */
       }
@@ -263,71 +268,171 @@ body {
 
   }
 
+  @media (max-width:1920px) {
+    .banner {
+      background-size: cover;
+      // height: calc(100vh*1200/1920);
+    }
+  }
+
   .intro {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    perspective-origin: center;
+    position: relative;
+    background-color:$deep;
+    width: 100%; 
+    overflow-y: visible;
+    overflow-x: hidden;
+    mix-blend-mode: lighten;
+    height: 600vh;
 
-
-    width: 100%;
-
-
-
-    .intro1 {
+    #intro1 {
       display: flex;
       justify-content: center;
-
+     
       .door {
         position: relative;
         width: 940px;
         height: 100vh;
-        
-        
 
-
-
-
-        img {
-          width: 100%;
-          height: auto;
-          
+        figure {
+          animation: glowEffect-W 3s linear infinite;
+          z-index: 3;
         }
+
 
         #intro_Q {
           position: absolute;
-          top:0;
-          right:20px;
+          top: 0;
+          right: 20px;
           width: 355px;
           display: column;
 
           p {
             margin-top: 30px;
             margin-left: 21px;
+            @include font-style($font-regular-18);
           }
-
         }
       }
     }
   }
 }
 
+#intro2 {
+      
+  top: 0;
+  /* 保持在 intro1 下面 */
+  mix-blend-mode: lighten;
+  margin-top: 0;
+  isolation: isolate;
+ 
+  text-align: center;
+
+  .title {
+    @extend %box-center;
+    flex-direction: column;
+
+    position: relative;
+    margin-top: 60px;
+    left: 0px;
+    margin-bottom: $interval-l;
+    z-index: 2;
+
+    h2{
+      @include font-style($font-medium-48);
+      color:#acff6c; 
+    }
+    h3{
+      @include font-style($font-medium-24);
+    }
+  }
+
+
+
+  .paper1 {
+    transform: translateZ(-2.5px) translateY(-3.5vh) scale(1.5);
+    z-index: 1;
+    position: absolute;
+    top: 40vh;
+    left: 100px;
+
+    mix-blend-mode: lighten;
+    // border: #acff6c 1px solid;
+
+    img {
+      width: 80%;
+      overflow-y: visible;
+      object-fit: cover;
+      opacity: 100%;
+    
+
+
+
+    }
+
+  }
+
+
+  .paper2{
+    transform: translateZ(-.5px) translateY(-1vh) scale(1.5);
+    position: absolute;
+    top: 90vh;
+    left: 0;
+    // border: #ffffff 1px solid;
+
+    img {
+      position: absolute;
+ 
+      width: 30%;
+      z-index: -2;
+      overflow-y: visible;
+      overflow-x: hidden;
+      object-fit: cover;
+      opacity: 100%;
+    }
+  }
+}
+
+
 
 /* 動畫效果 */
 /* glowEffect 5s linear infinite(發光效果放入css) */
-
-@keyframes glowEffect {
+@keyframes glowEffect-W {
   0% {
-    filter: drop-shadow(0 0 5px #acff6c) drop-shadow(0 0 10px #acff6c);
+    filter: drop-shadow(0 0 5px #ffffff) drop-shadow(0 0 10px #ffffff54);
     opacity: 1;
   }
 
   50% {
-    filter: drop-shadow(0 0 20px #acff6c60) drop-shadow(0 0 30px #acff6c60);
+    filter: drop-shadow(0 0 20px #acff6c26) drop-shadow(0 0 30px #acff6c0b);
+    opacity: 0.5;
+  }
+
+  100% {
+    filter: drop-shadow(0 0 5px #ffffff) drop-shadow(0 0 10px #ffffff54);
+    opacity: 1;
+  }
+}
+
+@keyframes glowEffect {
+  0% {
+    filter: drop-shadow(0 0 5px#acff6c) drop-shadow(0 0 10px #acff6c54);
+    opacity: 1;
+  }
+
+  50% {
+    filter: drop-shadow(0 0 20px #ffffff85) drop-shadow(0 0 30px #ffffff0b);
     opacity: 1;
   }
 
   100% {
-    filter: drop-shadow(0 0 5px #acff6c) drop-shadow(0 0 10px #acff6c);
+    filter: drop-shadow(0 0 5px#acff6c) drop-shadow(0 0 10px #acff6c54);
     opacity: 1;
   }
 }
+
 
 /* 設定字輪流變色時使用 */
 .glowing-text span {

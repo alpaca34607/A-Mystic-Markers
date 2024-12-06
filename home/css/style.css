@@ -88,6 +88,7 @@ video {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif; /* 英文字擺在前，中文字擺第二，中文字要有引號 */
   font-optical-sizing: auto; /* 光學自動改變粗細 */
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 /* 重置標題字重 */
@@ -151,6 +152,12 @@ textarea {
 
 ::-webkit-resizer {
   background: #acff6c;
+}
+
+#intro2 .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes rotate {
@@ -320,13 +327,14 @@ a {
 }
 
 body {
+  margin: 0;
+  padding: 0;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow: hidden;
   background-color: var(--Neutral-Black);
   color: var(--Neutral-White);
   font-family: "Noto Sans TC", sans-serif;
-}
-
-.forum-container {
-  padding: 20px 0px;
 }
 
 .top-bar {
@@ -354,14 +362,15 @@ body {
 }
 
 /*HOME  */
+/*HOME  */
 .home .banner {
   position: relative;
-  background-image: url("../public/images/home_banner.png");
+  background-image: url("/images/home_banner.png");
   background-size: 100%;
   background-position: right top;
   background-repeat: no-repeat;
   width: 100%;
-  min-height: 160vh;
+  min-height: 130vh;
 }
 .home .banner .logoXL {
   width: 30%;
@@ -371,10 +380,11 @@ body {
   justify-content: flex-end;
 }
 .home .banner .logoXL img {
+  margin: 0;
   width: 100%;
   animation: glowEffect 5s linear infinite;
 }
-.home .banner .logoXL p {
+.home .banner .logoXL .p {
   color: #acff6c;
   font-family: "Inter", serif;
   font-size: 12px;
@@ -383,52 +393,138 @@ body {
   margin-top: 20px;
 }
 .home .banner .logoXL #mark {
+  margin-left: auto;
+  position: relative;
   width: 80px;
-  margin-left: 318px;
   animation: rotateY 6s ease-in-out infinite, glowEffect 5s linear infinite;
   /* 設定動畫 */
 }
-.home .intro {
-  width: 100%;
+@media (max-width: 1920px) {
+  .home .banner {
+    background-size: cover;
+  }
 }
-.home .intro .intro1 {
+.home .intro {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  perspective-origin: center;
+  position: relative;
+  background-color: #2A2A2A;
+  width: 100%;
+  overflow-y: visible;
+  overflow-x: hidden;
+  mix-blend-mode: lighten;
+  height: 600vh;
+}
+.home .intro #intro1 {
   display: flex;
   justify-content: center;
 }
-.home .intro .intro1 .door {
+.home .intro #intro1 .door {
   position: relative;
   width: 940px;
   height: 100vh;
 }
-.home .intro .intro1 .door img {
-  width: 100%;
-  height: auto;
+.home .intro #intro1 .door figure {
+  animation: glowEffect-W 3s linear infinite;
+  z-index: 3;
 }
-.home .intro .intro1 .door #intro_Q {
+.home .intro #intro1 .door #intro_Q {
   position: absolute;
   top: 0;
   right: 20px;
   width: 355px;
   display: column;
 }
-.home .intro .intro1 .door #intro_Q p {
+.home .intro #intro1 .door #intro_Q p {
   margin-top: 30px;
   margin-left: 21px;
+  font-family: "Noto Sans TC";
+  font-weight: 300;
+  font-size: 1.125rem;
+  letter-spacing: 0.18rem;
+  line-height: 1.8;
+}
+
+#intro2 {
+  top: 0;
+  /* 保持在 intro1 下面 */
+  mix-blend-mode: lighten;
+  margin-top: 0;
+  isolation: isolate;
+  text-align: center;
+}
+#intro2 .title {
+  flex-direction: column;
+  position: relative;
+  margin-top: 60px;
+  left: 0px;
+  margin-bottom: 24px;
+  z-index: 2;
+}
+#intro2 .title h2 {
+  font-family: "Noto Sans TC";
+  font-weight: 500;
+  font-size: 3rem;
+  letter-spacing: 0.2rem;
+}
+#intro2 .paper1 {
+  transform: translateZ(-2.5px) translateY(-3.5vh) scale(1.5);
+  z-index: 1;
+  position: absolute;
+  top: 40vh;
+  left: 100px;
+  mix-blend-mode: lighten;
+}
+#intro2 .paper1 img {
+  width: 80%;
+  overflow-y: visible;
+  object-fit: cover;
+  opacity: 100%;
+}
+#intro2 .paper2 {
+  transform: translateZ(-0.5px) translateY(-1vh) scale(1.5);
+  position: absolute;
+  top: 90vh;
+  left: 0;
+}
+#intro2 .paper2 img {
+  position: absolute;
+  width: 30%;
+  z-index: -2;
+  overflow-y: visible;
+  overflow-x: hidden;
+  object-fit: cover;
+  opacity: 100%;
 }
 
 /* 動畫效果 */
 /* glowEffect 5s linear infinite(發光效果放入css) */
-@keyframes glowEffect {
+@keyframes glowEffect-W {
   0% {
-    filter: drop-shadow(0 0 5px #acff6c) drop-shadow(0 0 10px #acff6c);
+    filter: drop-shadow(0 0 5px #ffffff) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3294117647));
     opacity: 1;
   }
   50% {
-    filter: drop-shadow(0 0 20px rgba(172, 255, 108, 0.3764705882)) drop-shadow(0 0 30px rgba(172, 255, 108, 0.3764705882));
+    filter: drop-shadow(0 0 20px rgba(172, 255, 108, 0.1490196078)) drop-shadow(0 0 30px rgba(172, 255, 108, 0.0431372549));
+    opacity: 0.5;
+  }
+  100% {
+    filter: drop-shadow(0 0 5px #ffffff) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3294117647));
+    opacity: 1;
+  }
+}
+@keyframes glowEffect {
+  0% {
+    filter: drop-shadow(0 0 5px #acff6c) drop-shadow(0 0 10px rgba(172, 255, 108, 0.3294117647));
+    opacity: 1;
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5215686275)) drop-shadow(0 0 30px rgba(255, 255, 255, 0.0431372549));
     opacity: 1;
   }
   100% {
-    filter: drop-shadow(0 0 5px #acff6c) drop-shadow(0 0 10px #acff6c);
+    filter: drop-shadow(0 0 5px #acff6c) drop-shadow(0 0 10px rgba(172, 255, 108, 0.3294117647));
     opacity: 1;
   }
 }

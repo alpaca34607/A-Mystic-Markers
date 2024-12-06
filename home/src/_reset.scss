@@ -91,6 +91,7 @@ video {
     /*中文*/ "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;/* 英文字擺在前，中文字擺第二，中文字要有引號 */
     font-optical-sizing: auto;/* 光學自動改變粗細 */
     line-height: 1.5;
+    overflow-x: hidden;
     
 
 }
