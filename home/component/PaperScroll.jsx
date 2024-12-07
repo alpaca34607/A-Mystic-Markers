@@ -39,7 +39,7 @@ const ParallaxComponent = () => {
             </div>
 
             <div className='paper'>
-                <img className="paper1" data-speed="50" src="/images/paper_1.png " />
+                <img className="paper1" data-speed="10" src="/images/paper_1.png " />
                 <img className="paper2"  data-speed="100"src="/images/paper_2.png " />
             </div>
     

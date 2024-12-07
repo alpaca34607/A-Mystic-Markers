@@ -50,6 +50,11 @@ function App() {
                   準備好面對未知的恐懼吧！<br />
                 </p>
               </div>
+              <div>
+                
+
+              </div>
+
             </div>
           </div>
           <ParallaxComponent/>
