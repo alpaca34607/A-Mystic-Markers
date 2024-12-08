@@ -1,6 +1,6 @@
 @use 'reset';
-@use 'variables' as *;
-@use 'function' as *;
+@use 'variables'as *;
+@use 'function'as *;
 @use 'keyframes';
 
 
@@ -132,6 +132,7 @@ a {
   a {
     color: $primary-purple;
     font-weight: 400;
+    margin: 0 8px;
 
     /* transform: ; */
   }
@@ -175,8 +176,7 @@ a {
 body {
   margin: 0;
   padding: 0;
-  perspective: 1px;
-  transform-style: preserve-3d;
+ transform-style: preserve-3d;
   overflow: hidden;
   background-color: var(--Neutral-Black);
   color: #ffffff;
@@ -278,11 +278,11 @@ body {
 
   .intro {
     transform-style: preserve-3d;
-    perspective: 1000px;
+    
     perspective-origin: center;
     position: relative;
-    background-color:$deep;
-    width: 100%; 
+    background-color: $deep;
+    width: 100%;
     overflow-y: visible;
     overflow-x: hidden;
     mix-blend-mode: lighten;
@@ -291,7 +291,7 @@ body {
     #intro1 {
       display: flex;
       justify-content: center;
-     
+
       .door {
         position: relative;
         width: 940px;
@@ -321,14 +321,15 @@ body {
   }
 }
 
+
 #intro2 {
-      
+
   top: 0;
   /* 保持在 intro1 下面 */
   mix-blend-mode: lighten;
   margin-top: 0;
   isolation: isolate;
- 
+
   text-align: center;
 
   .title {
@@ -339,56 +340,74 @@ body {
     margin-top: 60px;
     left: 0px;
     margin-bottom: $interval-l;
-    z-index: 2;
+    z-index: 3;
 
-    h2{
+    h2 {
       @include font-style($font-medium-48);
-      color:#acff6c; 
+      color: #acff6c;
     }
-    h3{
+
+    h3 {
       @include font-style($font-medium-24);
       margin-top: 16px;
     }
   }
 
 
+  .laya-please {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+/* 滑入時改變位置和透明度 */
+.laya-please.slide-in {
+    opacity: 1;
+    transform: translateY(0); /* 滑動到原位 */
+}
+
+/* 完成動畫後，滑鼠事件接管 transform */
+.laya-please.interactive {
+    transform: none; /* 滑鼠事件控制 transform */
+    transition: none; /* 停止 transition */
+}
+
+
+
 
   .paper1 {
-    transform: translateZ(-2.5px) translateY(-3.5vh) scale(1.5);
-    z-index: 1;
+    // transform: translateZ(-50px) translateY(-10vh) scale(1.5);
+    z-index: 2;
     position: absolute;
-    top: 40vh;
+    top: 0vh;
     left: 100px;
+    opacity: 0;
+    transform: translateY(50px);
+    
+
 
     mix-blend-mode: lighten;
     // border: #acff6c 1px solid;
 
     img {
-      width: 80%;
+      width: 50%;
       overflow-y: visible;
       object-fit: cover;
       opacity: 100%;
-    
-
-
-
     }
 
   }
 
 
-  .paper2{
-    transform: translateZ(-.5px) translateY(-1vh) scale(1.5);
+  .paper2 {
     position: absolute;
     top: 90vh;
     left: 0;
-    // border: #ffffff 1px solid;
+    border: #ffffff 1px;
 
+    // border: #ffffff 1px solid;
     img {
-      position: absolute;
- 
       width: 30%;
-      z-index: -2;
+      z-index: 1;
       overflow-y: visible;
       overflow-x: hidden;
       object-fit: cover;
@@ -399,7 +418,25 @@ body {
 
 
 
+
+
+
 /* 動畫效果 */
+
+@keyframes slide-in-buttom {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 /* glowEffect 5s linear infinite(發光效果放入css) */
 @keyframes glowEffect-W {
   0% {
