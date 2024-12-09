@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import "../../css/style.css";
 
+
 const Intro2Component = () => {
     const targetRef = useRef(null);
+
 
     useEffect(() => {
         const elems = document.querySelectorAll(".laya-please");
@@ -13,33 +15,42 @@ const Intro2Component = () => {
         const layer7 = document.querySelector(".layer-7");
         const layer8 = document.querySelector(".layer-8");
 
+
         // 滑鼠移動事件
         const handleMouseMove = (e) => {
             const width = window.innerWidth;
             const height = window.innerHeight;
 
+
             // 計算滑鼠相對於視窗的水平和垂直位置
             const mouseX = e.pageX;
             const mouseY = e.pageY;
 
-            // 滑鼠移動
+
+            // 增大位移的比例，讓滑鼠移動一點就有較大的變化
             const mouseMovedX2 = (width / 2 - mouseX) / 15; // 水平移動
             const mouseMovedY2 = (height / 2 - mouseY) / 15; // 垂直移動
+
 
             const mouseMovedX3 = (width / 2 - mouseX) / 12;
             const mouseMovedY3 = (height / 2 - mouseY) / 12;
 
+
             const mouseMovedX4 = (width / 2 - mouseX) / 10;
             const mouseMovedY4 = (height / 2 - mouseY) / 10;
+
 
             const mouseMovedX5 = (width / 2 - mouseX) / 8;
             const mouseMovedY5 = (height / 2 - mouseY) / 8;
 
+
             const mouseMovedX6 = (width / 2 - mouseX) / 6;
             const mouseMovedY6 = (height / 2 - mouseY) / 6;
 
+
             const mouseMovedX7 = (width / 2 - mouseX) / 4;
             const mouseMovedY7 = (height / 2 - mouseY) / 4;
+
 
             // 更新各層位移 (水平方向 + 垂直方向)
             if (layer3) layer3.style.transform = `translateX(${mouseMovedX2}px) translateY(${mouseMovedY2}px)`;
@@ -50,12 +61,13 @@ const Intro2Component = () => {
             if (layer8) layer8.style.transform = `translateX(${mouseMovedX7}px) translateY(${mouseMovedY7}px)`;
         };
 
+
         // Intersection Observer 監控元素進入視口時觸發動畫
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     // 滾動進入視口，觸發滑動效果
-                    entry.target.style.transition = "transform 1s ease-in-out, opacity 1s ease-in-out";
+                    entry.target.style.transition = "none";  // 不再有過渡動畫
                     entry.target.style.transform = "translateY(0)";
                     entry.target.style.opacity = "1";
                 } else {
@@ -66,13 +78,16 @@ const Intro2Component = () => {
             });
         });
 
+
         // 監聽目標元素
         elems.forEach((elem) => {
             observer.observe(elem);
         });
 
+
         // 添加滑鼠移動事件
         document.body.addEventListener("mousemove", handleMouseMove);
+
 
         // 清理事件監聽器
         return () => {
@@ -83,6 +98,7 @@ const Intro2Component = () => {
         };
     }, []);
 
+
     return (
         <div id="intro2">
             <div className="title">
@@ -91,6 +107,7 @@ const Intro2Component = () => {
                     精選靈異故事、都市傳說，帶你進入未知世界，享受身歷其境的驚悚與神秘氛圍。
                 </h3>
             </div>
+
 
             <div className="paper">
                 <img
@@ -107,8 +124,12 @@ const Intro2Component = () => {
                     alt="paper2"
                 />
             </div>
+
+
+            <div id="intro3"></div>
         </div>
     );
 };
+
 
 export default Intro2Component;

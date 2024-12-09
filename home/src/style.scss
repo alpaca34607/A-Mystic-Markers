@@ -278,7 +278,6 @@ body {
 
   .intro {
     transform-style: preserve-3d;
-    
     perspective-origin: center;
     position: relative;
     background-color: $deep;
@@ -415,11 +414,18 @@ body {
       opacity: 100%;
     }
   }
-  #intro3{
-    
-   
+ 
+}
+#intro3{
+  display: column;
+  justify-content: center; 
+  text-align: center;
+    img{
+      
+      width: 80%;
+      max-width: 80% ;
+    }
 
-  }
 }
 
 

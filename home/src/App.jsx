@@ -60,6 +60,9 @@ function App() {
                 探索靈異地點，標記、收藏有趣的景點，並留下你的經歷與評論，發掘身邊未知的神秘之地。
               </h3>
             </div>
+            <div>
+              <img src="/images/map_intro.png" />
+            </div>
 
           </div>
 
