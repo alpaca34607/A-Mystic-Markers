@@ -299,6 +299,7 @@ a {
 .member a {
   color: #B595FF;
   font-weight: 400;
+  margin: 0 8px;
   /* transform: ; */
 }
 
@@ -329,7 +330,6 @@ a {
 body {
   margin: 0;
   padding: 0;
-  perspective: 1px;
   transform-style: preserve-3d;
   overflow: hidden;
   background-color: var(--Neutral-Black);
@@ -407,7 +407,6 @@ body {
 }
 .home .intro {
   transform-style: preserve-3d;
-  perspective: 1000px;
   perspective-origin: center;
   position: relative;
   background-color: #2A2A2A;
@@ -454,6 +453,8 @@ body {
   margin-top: 0;
   isolation: isolate;
   text-align: center;
+  /* 滑入時改變位置和透明度 */
+  /* 完成動畫後，滑鼠事件接管 transform */
 }
 #intro2 .title {
   flex-direction: column;
@@ -461,7 +462,7 @@ body {
   margin-top: 60px;
   left: 0px;
   margin-bottom: 24px;
-  z-index: 2;
+  z-index: 3;
 }
 #intro2 .title h2 {
   font-family: "Noto Sans TC";
@@ -478,30 +479,43 @@ body {
   line-height: 1.5;
   margin-top: 16px;
 }
+#intro2 .laya-please {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+#intro2 .laya-please.slide-in {
+  opacity: 1;
+  transform: translateY(0); /* 滑動到原位 */
+}
+#intro2 .laya-please.interactive {
+  transform: none; /* 滑鼠事件控制 transform */
+  transition: none; /* 停止 transition */
+}
 #intro2 .paper1 {
-  transform: translateZ(-2.5px) translateY(-3.5vh) scale(1.5);
-  z-index: 1;
+  z-index: 2;
   position: absolute;
-  top: 40vh;
+  top: 0vh;
   left: 100px;
+  opacity: 0;
+  transform: translateY(50px);
   mix-blend-mode: lighten;
 }
 #intro2 .paper1 img {
-  width: 80%;
+  width: 50%;
   overflow-y: visible;
   object-fit: cover;
   opacity: 100%;
 }
 #intro2 .paper2 {
-  transform: translateZ(-0.5px) translateY(-1vh) scale(1.5);
   position: absolute;
   top: 90vh;
   left: 0;
+  border: #ffffff 1px;
 }
 #intro2 .paper2 img {
-  position: absolute;
   width: 30%;
-  z-index: -2;
+  z-index: 1;
   overflow-y: visible;
   overflow-x: hidden;
   object-fit: cover;
@@ -509,6 +523,18 @@ body {
 }
 
 /* 動畫效果 */
+@keyframes slide-in-buttom {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 /* glowEffect 5s linear infinite(發光效果放入css) */
 @keyframes glowEffect-W {
   0% {

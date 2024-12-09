@@ -8,7 +8,8 @@ import Map from "./pages/Map";
 import Contact from "./pages/Contact";
 import Forum from "./pages/Forum";
 import GlowingText from "./component/GlowingText";
-import ParallaxComponent from "./component/PaperScroll";
+import Intro2Component from "./component/Intro2Component";
+import Carousel from "./component/Carousel";
 
 function App() {
 
@@ -52,7 +53,11 @@ function App() {
               </div>
             </div>
           </div>
-          <ParallaxComponent/>
+          <Intro2Component/>
+
+          <Carousel/>
+         
+          
    </section>
       </main>
     </>
