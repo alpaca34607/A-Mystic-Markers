@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "../../css/carousel.css";
 
 const images = [
-  "https://i1.sndcdn.com/artworks-000165384395-rhrjdn-t500x500.jpg",
-  "https://i1.sndcdn.com/artworks-000185743981-tuesoj-t500x500.jpg",
-  "https://i1.sndcdn.com/artworks-000158708482-k160g1-t500x500.jpg",
-  "https://i1.sndcdn.com/artworks-000062423439-lf7ll2-t500x500.jpg",
-  "https://i1.sndcdn.com/artworks-000028787381-1vad7y-t500x500.jpg",
+  "/images/故事頁介紹1.png",
+  "/images/故事頁介紹2.png",
+  "/images/故事頁介紹3.png",
+  "/images/故事頁介紹4.png",
+  "/images/故事頁介紹5.png",
 ];
 
 const Carousel = () => {

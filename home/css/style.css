@@ -154,7 +154,7 @@ textarea {
   background: #acff6c;
 }
 
-#intro2 .title {
+.home .intro .title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -416,6 +416,29 @@ body {
   mix-blend-mode: lighten;
   height: 600vh;
 }
+.home .intro .title {
+  flex-direction: column;
+  position: relative;
+  margin-top: 30px;
+  left: 0px;
+  margin-bottom: 24px;
+  z-index: 3;
+}
+.home .intro .title h2 {
+  font-family: "Noto Sans TC";
+  font-weight: 500;
+  font-size: 3rem;
+  letter-spacing: 0.2rem;
+  color: #acff6c;
+}
+.home .intro .title h3 {
+  font-family: "Noto Sans TC";
+  font-weight: 500;
+  font-size: 1.5rem;
+  letter-spacing: 0.18rem;
+  line-height: 1.5;
+  margin-top: 16px;
+}
 .home .intro #intro1 {
   display: flex;
   justify-content: center;
@@ -455,29 +478,6 @@ body {
   text-align: center;
   /* 滑入時改變位置和透明度 */
   /* 完成動畫後，滑鼠事件接管 transform */
-}
-#intro2 .title {
-  flex-direction: column;
-  position: relative;
-  margin-top: 60px;
-  left: 0px;
-  margin-bottom: 24px;
-  z-index: 3;
-}
-#intro2 .title h2 {
-  font-family: "Noto Sans TC";
-  font-weight: 500;
-  font-size: 3rem;
-  letter-spacing: 0.2rem;
-  color: #acff6c;
-}
-#intro2 .title h3 {
-  font-family: "Noto Sans TC";
-  font-weight: 500;
-  font-size: 1.5rem;
-  letter-spacing: 0.18rem;
-  line-height: 1.5;
-  margin-top: 16px;
 }
 #intro2 .laya-please {
   transform: translateY(100px);
@@ -521,7 +521,6 @@ body {
   object-fit: cover;
   opacity: 100%;
 }
-
 /* 動畫效果 */
 @keyframes slide-in-buttom {
   0% {

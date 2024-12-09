@@ -1,7 +1,7 @@
 #carousel {
   position: relative;
   height: 400px;
-  margin: 250px auto;
+  margin: 300px auto 100px auto;
   top: 50%;
   transform: translateY(-50%);
   overflow: hidden;
@@ -27,6 +27,7 @@
   clip-path: polygon(
     31% 1%, 69% 1%, 99% 31%, 99% 69%, 69% 99%, 31% 99%, 1% 69%, 1% 31%
   );
+  
 }
 #carousel div.hideLeft {
   left: 0%;
@@ -57,6 +58,7 @@
   left: 40%;
   transform: translateY(60%) translateX(-50%);
   opacity: 0.7;
+  filter:brightness(60%);
 }
 #carousel div.prevLeftSecond img {
   width: 200px;
@@ -79,6 +81,7 @@
   left: 60%;
   transform: translateY(60%) translateX(-50%);
   opacity: 0.7;
+  filter:brightness(60%);
 }
 #carousel div.nextRightSecond img {
   width: 200px;

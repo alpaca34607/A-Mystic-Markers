@@ -36,8 +36,6 @@ function App() {
           </div>
         </section>
         <section className="intro">
-
-
           <div id="intro1">
             <div className='door'>
               <figure> <img src="/images/door.png" /></figure>
@@ -53,12 +51,20 @@ function App() {
               </div>
             </div>
           </div>
-          <Intro2Component/>
+          <Intro2Component />
+          <Carousel />
+          <div id="intro3">
+            <div className="title">
+              <h2>靈異導航</h2>
+              <h3>
+                探索靈異地點，標記、收藏有趣的景點，並留下你的經歷與評論，發掘身邊未知的神秘之地。
+              </h3>
+            </div>
 
-          <Carousel/>
-         
-          
-   </section>
+          </div>
+
+        </section>
+
       </main>
     </>
   );

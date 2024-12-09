@@ -287,6 +287,26 @@ body {
     overflow-x: hidden;
     mix-blend-mode: lighten;
     height: 600vh;
+    .title {
+      @extend %box-center;
+      flex-direction: column;
+  
+      position: relative;
+      margin-top: 30px;
+      left: 0px;
+      margin-bottom: $interval-l;
+      z-index: 3;
+  
+      h2 {
+        @include font-style($font-medium-48);
+        color: #acff6c;
+      }
+  
+      h3 {
+        @include font-style($font-medium-24);
+        margin-top: 16px;
+      }
+    }
 
     #intro1 {
       display: flex;
@@ -329,29 +349,10 @@ body {
   mix-blend-mode: lighten;
   margin-top: 0;
   isolation: isolate;
-
   text-align: center;
 
-  .title {
-    @extend %box-center;
-    flex-direction: column;
 
-    position: relative;
-    margin-top: 60px;
-    left: 0px;
-    margin-bottom: $interval-l;
-    z-index: 3;
-
-    h2 {
-      @include font-style($font-medium-48);
-      color: #acff6c;
-    }
-
-    h3 {
-      @include font-style($font-medium-24);
-      margin-top: 16px;
-    }
-  }
+ 
 
 
   .laya-please {
@@ -413,6 +414,11 @@ body {
       object-fit: cover;
       opacity: 100%;
     }
+  }
+  #intro3{
+    
+   
+
   }
 }
 
