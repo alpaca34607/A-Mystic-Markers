@@ -1,5 +1,6 @@
 import { useState } from "react";
-import "../css/style.css";
+// import "../css/style.css";
+import "./style.scss";
 import Navbar from "./component/Navbar";
 import { Route, Routes } from "react-router-dom";
 import Story from "./pages/Storys";
@@ -10,6 +11,7 @@ import Forum from "./pages/Forum";
 import GlowingText from "./component/GlowingText";
 import Intro2Component from "./component/Intro2Component";
 import Carousel from "./component/Carousel";
+import ForumImg from "./component/ForumImg";
 
 function App() {
 
@@ -38,7 +40,7 @@ function App() {
         <section className="intro">
           <div id="intro1">
             <div className='door'>
-              <figure> <img src="/images/door.png" /></figure>
+              <figure> <img src="/images/door.png" alt="未知之門" /></figure>
               <div id="intro_Q">
                 <img src="/images/intro_Q.svg" alt="準備好要探索未知了嗎?" />
                 <p>
@@ -60,10 +62,34 @@ function App() {
                 探索靈異地點，標記、收藏有趣的景點，並留下你的經歷與評論，發掘身邊未知的神秘之地。
               </h3>
             </div>
-            <div>
-              <img src="/images/map_intro.png" />
+            <div className="map-area">
+              <img src="/images/map_intro.png" alt="Map Intro" />
+              <div className="map-intro" >
+                <h4>1.</h4>
+                <p>按鈕切換地圖  鬧鬼地點/收驚廟宇</p>
+                <h4>2.</h4>
+                <p>可搜尋地點&座標</p>
+                <h4>3.</h4>
+                <p>可收藏地點(需登入帳號)</p>
+                <h4>4.</h4>
+                <p>可直接在地圖上標註地點</p>
+                <p>可收藏地點(需登入帳號)</p>
+                <h4>5.</h4>
+                <p>瀏覽地點與相關評論</p>
+              </div>
             </div>
 
+            <div id="intro4">
+              <div className="title">
+                <h2>鬼影探索</h2>
+                <h3>
+                  靈異愛好者的專屬交流空間，分享靈異故事、實地探險經驗，<br />
+                  並討論各類神秘現象，找到志同道合的朋友。
+                </h3>
+              </div>
+              <ForumImg />
+            </div>
+            
           </div>
 
         </section>

@@ -1,5 +1,6 @@
 import React from 'react';
-import "../../css/style.css";
+// import "../../css/style.css";
+import "../style.scss";
 
 const GlowingText = ({ text }) => {
   // 確保 text 是字串，如果不是，則設為空字串

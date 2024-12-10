@@ -1,6 +1,6 @@
 @use 'reset';
-@use 'variables'as *;
-@use 'function'as *;
+@use 'variables' as *;
+@use 'function' as *;
 @use 'keyframes';
 
 
@@ -176,7 +176,7 @@ a {
 body {
   margin: 0;
   padding: 0;
- transform-style: preserve-3d;
+  transform-style: preserve-3d;
   overflow: hidden;
   background-color: var(--Neutral-Black);
   color: #ffffff;
@@ -286,21 +286,22 @@ body {
     overflow-x: hidden;
     mix-blend-mode: lighten;
     height: 600vh;
+
     .title {
       @extend %box-center;
       flex-direction: column;
-  
+
       position: relative;
       margin-top: 30px;
       left: 0px;
       margin-bottom: $interval-l;
       z-index: 3;
-  
+
       h2 {
         @include font-style($font-medium-48);
         color: #acff6c;
       }
-  
+
       h3 {
         @include font-style($font-medium-24);
         margin-top: 16px;
@@ -337,97 +338,168 @@ body {
         }
       }
     }
-  }
-}
 
 
-#intro2 {
 
-  top: 0;
-  /* 保持在 intro1 下面 */
-  mix-blend-mode: lighten;
-  margin-top: 0;
-  isolation: isolate;
-  text-align: center;
+    #intro2 {
 
-
- 
-
-
-  .laya-please {
-    transform: translateY(100px);
-    opacity: 0;
-    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-}
-/* 滑入時改變位置和透明度 */
-.laya-please.slide-in {
-    opacity: 1;
-    transform: translateY(0); /* 滑動到原位 */
-}
-
-/* 完成動畫後，滑鼠事件接管 transform */
-.laya-please.interactive {
-    transform: none; /* 滑鼠事件控制 transform */
-    transition: none; /* 停止 transition */
-}
+      top: 0;
+      /* 保持在 intro1 下面 */
+      mix-blend-mode: lighten;
+      margin-top: 0;
+      isolation: isolate;
+      text-align: center;
 
 
 
 
-  .paper1 {
-    // transform: translateZ(-50px) translateY(-10vh) scale(1.5);
-    z-index: 2;
-    position: absolute;
-    top: 0vh;
-    left: 100px;
-    opacity: 0;
-    transform: translateY(50px);
-    
+
+      .laya-please {
+        transform: translateY(100px);
+        opacity: 0;
+        transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+      }
+
+      /* 滑入時改變位置和透明度 */
+      .laya-please.slide-in {
+        opacity: 1;
+        transform: translateY(0);
+        /* 滑動到原位 */
+      }
+
+      /* 完成動畫後，滑鼠事件接管 transform */
+      .laya-please.interactive {
+        transform: none;
+        /* 滑鼠事件控制 transform */
+        transition: none;
+        /* 停止 transition */
+      }
 
 
-    mix-blend-mode: lighten;
-    // border: #acff6c 1px solid;
 
-    img {
-      width: 50%;
-      overflow-y: visible;
-      object-fit: cover;
-      opacity: 100%;
+
+      .paper1 {
+        // transform: translateZ(-50px) translateY(-10vh) scale(1.5);
+        z-index: 2;
+        position: absolute;
+        top: 0vh;
+        left: 100px;
+        opacity: 0;
+        transform: translateY(50px);
+
+
+
+        mix-blend-mode: lighten;
+        // border: #acff6c 1px solid;
+
+        img {
+          width: 50%;
+          overflow-y: visible;
+          object-fit: cover;
+          opacity: 100%;
+        }
+
+      }
+
+
+      .paper2 {
+        position: absolute;
+        top: 90vh;
+        left: 0;
+        border: #ffffff 1px;
+
+        // border: #ffffff 1px solid;
+        img {
+          width: 30%;
+          z-index: 1;
+          overflow-y: visible;
+          overflow-x: hidden;
+          object-fit: cover;
+          opacity: 100%;
+        }
+      }
+
     }
 
-  }
+    #intro3 {
+
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      width: 100%;
+
+      .map-area {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        overflow: hidden;
+        border: #acff6c 1px solid;
+        z-index: 1;
+        margin-right: 15%;
+        margin-top: 30px;
+
+        img {
+          width: 50%;
+          min-width: 600px;
 
 
-  .paper2 {
-    position: absolute;
-    top: 90vh;
-    left: 0;
-    border: #ffffff 1px;
 
-    // border: #ffffff 1px solid;
-    img {
-      width: 30%;
-      z-index: 1;
-      overflow-y: visible;
-      overflow-x: hidden;
-      object-fit: cover;
-      opacity: 100%;
+        }
+
+        .map-intro {
+          display: flex;
+          flex-direction: column;
+          width: auto;
+          text-align: left;
+          margin-top: 10%;
+
+          h4 {
+            color: $primary-green;
+            @include font-style($font-EN-medium-40);
+          }
+
+          p {
+            @include font-style($font-medium-18);
+
+          }
+        }
+      }
+
     }
-  }
- 
-}
-#intro3{
-  display: column;
-  justify-content: center; 
-  text-align: center;
-    img{
-      
-      width: 80%;
-      max-width: 80% ;
+
+    #intro4 {
+
+      margin-top: 100px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      width: 100%;
+
+
+      .forum-gallery {
+       
+        height: auto;
+        display: block;
+        .image-link{
+
+
+        img {
+          width:auto;
+          height: auto;
+          max-width: none;
+          object-fit: none;
+          
+        
+        }
+      }
+    }
     }
 
-}
 
+  }
+}
 
 
 

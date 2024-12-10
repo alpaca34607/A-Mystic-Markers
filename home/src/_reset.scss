@@ -149,6 +149,7 @@ textarea {
   }
   ::-webkit-scrollbar-track { //滾動條的軌道，會覆蓋scrollbar底色
     background: $deep;
+    border: 1px solid $primary-purple ;
   }
   ::-webkit-scrollbar-corner { //直橫軸交集的小缺角顏色
     background: $grey;
