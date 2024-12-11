@@ -435,7 +435,7 @@ body {
         align-items: flex-start;
         width: 100%;
         overflow: hidden;
-        border: #acff6c 1px solid;
+        // border: #acff6c 1px solid;
         z-index: 1;
         margin-right: 15%;
         margin-top: 30px;
@@ -471,30 +471,120 @@ body {
 
     #intro4 {
 
-      margin-top: 100px;
+      margin-top: 200px;
       display: flex;
       flex-direction: column;
+      align-items: center;
       text-align: center;
       width: 100%;
 
 
       .forum-gallery {
-       
-        height: auto;
-        display: block;
-        .image-link{
+        position: relative;
+        margin-top: 30px;
+        height: 610px;
+        display: inline-block;
+        width: 1110px;
+        padding: 0;
 
 
-        img {
-          width:auto;
-          height: auto;
-          max-width: none;
-          object-fit: none;
+        #Legends {
+         position: absolute;
+          margin-bottom: 45px;
+          width: fit-content;
           
-        
+          top:0%;
+          left: 0%;
+        }
+         
+         #Horror {
+          position: absolute;
+          width: fit-content;
+          bottom:0%;
+          left:0%;
+        box-sizing: border-box;
+        }
+        #Exorcism {
+          position: absolute;
+          width: fit-content;
+          margin-bottom: 35px;
+          top:0%;
+          right: 0%;
+        }
+        #Creeps{
+
+          position: absolute;
+          width: fit-content;
+          bottom:0%;
+          right: 0%;
+        }
+        #Ruins{
+          position: absolute;
+          width: fit-content;
+          bottom:0%;
+          left: 32.5%;
+        }
+     
+
+       
+
+
+        .image-link {
+          width: auto;
+          display: inline-block;
+          position: relative;
+          border: $primary-green solid 3px;
+          border-radius: 20px;
+
+
+          &:hover {
+            border: $primary-purple solid 3px;
+
+            img {
+              filter: brightness(70%);
+
+            }
+
+
+            .text-link {
+              color: $primary-green;
+              border: 1px solid $primary-green;
+              border-radius: 10px;
+              padding: 0.5rem;
+
+            }
+          }
+
+
+          a img {
+            z-index: 0;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border: none;
+
+
+
+          }
+
+          .text-link {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            text-decoration: none;
+
+          }
+
+
+
         }
       }
-    }
     }
 
 

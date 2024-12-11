@@ -17,13 +17,10 @@ function App() {
 
   return (
     <>
-      {/* <Routes>
-      <Route path="/" element={<Home/>}></Route>
-        <Route path="/about" element={<Story/>}></Route>
-        <Route path="/news" element={<Map/>}></Route>
-        <Route path="/news" element={<Forum/>}></Route>
-        <Route path="/news" element={<Contact/>}></Route>
-      </Routes>       */}
+  
+      <Routes>
+      <Route path="/" element={
+              
       <main className="home">
         <section className="banner">
           <Navbar />
@@ -95,7 +92,15 @@ function App() {
         </section>
 
       </main>
-    </>
+      }/>
+   
+     <Route path="/about" element={<Story/>}/>
+     <Route path="/news" element={<Map/>}/>
+     <Route path="/news" element={<Forum/>}/>
+     <Route path="/news" element={<Contact/>}/>
+   </Routes>
+ 
+   </>
   );
 }
 

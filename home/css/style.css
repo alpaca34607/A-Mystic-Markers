@@ -537,7 +537,6 @@ body {
   align-items: flex-start;
   width: 100%;
   overflow: hidden;
-  border: #acff6c 1px solid;
   z-index: 1;
   margin-right: 15%;
   margin-top: 30px;
@@ -569,21 +568,91 @@ body {
   line-height: 1.5;
 }
 .home .intro #intro4 {
-  margin-top: 100px;
+  margin-top: 200px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-align: center;
   width: 100%;
 }
 .home .intro #intro4 .forum-gallery {
-  height: auto;
-  display: block;
+  position: relative;
+  margin-top: 30px;
+  height: 610px;
+  display: inline-block;
+  width: 1110px;
+  padding: 0;
 }
-.home .intro #intro4 .forum-gallery .image-link img {
+.home .intro #intro4 .forum-gallery #Legends {
+  position: absolute;
+  margin-bottom: 45px;
+  width: fit-content;
+  top: 0%;
+  left: 0%;
+}
+.home .intro #intro4 .forum-gallery #Horror {
+  position: absolute;
+  width: fit-content;
+  bottom: 0%;
+  left: 0%;
+  box-sizing: border-box;
+}
+.home .intro #intro4 .forum-gallery #Exorcism {
+  position: absolute;
+  width: fit-content;
+  margin-bottom: 35px;
+  top: 0%;
+  right: 0%;
+}
+.home .intro #intro4 .forum-gallery #Creeps {
+  position: absolute;
+  width: fit-content;
+  bottom: 0%;
+  right: 0%;
+}
+.home .intro #intro4 .forum-gallery #Ruins {
+  position: absolute;
+  width: fit-content;
+  bottom: 0%;
+  left: 32.5%;
+}
+.home .intro #intro4 .forum-gallery .image-link {
   width: auto;
+  display: inline-block;
+  position: relative;
+  border: #acff6c solid 3px;
+  border-radius: 20px;
+}
+.home .intro #intro4 .forum-gallery .image-link:hover {
+  border: #B595FF solid 3px;
+}
+.home .intro #intro4 .forum-gallery .image-link:hover img {
+  filter: brightness(70%);
+}
+.home .intro #intro4 .forum-gallery .image-link:hover .text-link {
+  color: #acff6c;
+  border: 1px solid #acff6c;
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+.home .intro #intro4 .forum-gallery .image-link a img {
+  z-index: 0;
+  width: 100%;
   height: auto;
-  max-width: none;
-  object-fit: none;
+  object-fit: contain;
+  border: none;
+}
+.home .intro #intro4 .forum-gallery .image-link .text-link {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  text-decoration: none;
 }
 
 /* 動畫效果 */
