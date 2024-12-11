@@ -382,6 +382,14 @@ body {
   width: 100%;
   min-height: 130vh;
 }
+.home .banner .fog-area {
+  position: relative;
+  top: 60vh;
+  overflow: hidden; /* 防止出現卷軸 */
+  border: #acff6c 1px solid;
+  z-index: -1;
+  /* 模糊容器邊界 */
+}
 .home .banner .logoXL {
   width: 30%;
   min-width: 200px;

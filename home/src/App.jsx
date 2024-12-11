@@ -12,6 +12,7 @@ import GlowingText from "./component/GlowingText";
 import Intro2Component from "./component/Intro2Component";
 import Carousel from "./component/Carousel";
 import ForumImg from "./component/ForumImg";
+import Fog from "./component/Fog";
 
 function App() {
 
@@ -22,9 +23,12 @@ function App() {
       <Route path="/" element={
               
       <main className="home">
+       
         <section className="banner">
           <Navbar />
-
+          <div className="fog-area">
+            <Fog/>
+          </div>
           <div className="logoXL">
             <Link to="/">
               <img id="mark" src="/images/LOGO.svg" alt="神秘座標" />

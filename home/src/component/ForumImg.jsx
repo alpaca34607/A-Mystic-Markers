@@ -12,9 +12,9 @@ const ForumImg = () => {
     return (
         <div className="forum-gallery">
 
-            {images.map((image) => (
+            {images.map((image, index) => (
 
-                <div id={image.id}>
+                <div id={image.id}  key={index} >
                     <Link to={image.link} className="image-link">
                         <img src={image.src} alt={image.alt} />
                         <span className="text-link">{image.alt}</span>

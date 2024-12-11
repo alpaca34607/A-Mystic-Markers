@@ -241,6 +241,16 @@ body {
     min-height: 130vh;
 
 
+    .fog-area {
+      position: relative;
+      top: 60vh;
+      overflow: hidden; /* 防止出現卷軸 */
+      border: #acff6c 1px solid;
+      z-index: -1;
+      /* 模糊容器邊界 */
+    }
+
+
     // border:1px solid #B3B3B3;
 
     .logoXL {
@@ -250,6 +260,7 @@ body {
       margin-left: 132px;
       display: flex;
       justify-content: flex-end;
+      
 
 
       img {
