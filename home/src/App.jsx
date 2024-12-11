@@ -2,7 +2,7 @@ import { useState } from "react";
 // import "../css/style.css";
 import "./style.scss";
 import Navbar from "./component/Navbar";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import Story from "./pages/Storys";
 import Home from "./pages/Home";
 import Map from "./pages/Map";
@@ -26,12 +26,12 @@ function App() {
           <Navbar />
 
           <div className="logoXL">
-            <a href="./index.html">
+            <Link to="/">
               <img id="mark" src="/images/LOGO.svg" alt="神秘座標" />
               <img src="/images/logo_XL.svg" alt="神秘座標" />
               <div className="p"><GlowingText text="MYSTIC MARKERS" /></div>
 
-            </a>
+            </Link>
           </div>
         </section>
         <section className="intro">

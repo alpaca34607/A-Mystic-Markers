@@ -32,6 +32,7 @@ const Carousel = () => {
     if (relativeIndex === images.length - 2) return "prevLeftSecond";
     return relativeIndex > 2 ? "hideRight" : "hideLeft";
   };
+  
 
   return (
     <main>

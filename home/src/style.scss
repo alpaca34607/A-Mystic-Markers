@@ -92,8 +92,7 @@ a {
   align-items: center;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
+    filter:  invert(42%)  saturate(1352%) hue-rotate(140deg) brightness(120%) contrast(119%);
   }
 
   img {
@@ -124,15 +123,23 @@ a {
   margin: 8px;
   margin-bottom: 5px;
 
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-  }
+ 
 
   a {
     color: $primary-purple;
     font-weight: 400;
     margin: 0 8px;
+    padding: 0 3px;
+    border-radius: 5px;
+    border-left: transparent 1px solid ;
+    border-right: transparent 1px solid ;
+    
+   
+    &:hover {
+   
+     border-left: $primary-purple 1px solid ;
+     border-right: $primary-purple 1px solid ;
+    }
 
     /* transform: ; */
   }
@@ -183,6 +190,7 @@ body {
 
   font-family: 'Noto Sans TC', sans-serif;
 
+
 }
 
 .top-bar {
@@ -191,6 +199,7 @@ body {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 30px;
+  
 }
 
 .nav-buttons {
@@ -216,6 +225,10 @@ body {
 /*HOME  */
 
 .home {
+  background-image:url('/images/noise.png') ;
+  background-size:auto;
+  background-repeat: repeat;
+  background-blend-mode: hard-light;
 
   .banner {
     position: relative;
@@ -232,6 +245,7 @@ body {
 
     .logoXL {
       width: 30%;
+      min-width: 200px;
       margin-top: 130px;
       margin-left: 132px;
       display: flex;
@@ -285,7 +299,7 @@ body {
     overflow-y: visible;
     overflow-x: hidden;
     mix-blend-mode: lighten;
-    height: 600vh;
+    height: auto;
 
     .title {
       @extend %box-center;
@@ -443,6 +457,7 @@ body {
         img {
           width: 50%;
           min-width: 600px;
+          
 
 
 
@@ -472,6 +487,7 @@ body {
     #intro4 {
 
       margin-top: 200px;
+      margin-bottom: 200px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -482,9 +498,9 @@ body {
       .forum-gallery {
         position: relative;
         margin-top: 30px;
-        height: 610px;
+        height: 620px;
         display: inline-block;
-        width: 1110px;
+        width: 1120px;
         padding: 0;
 
 
@@ -535,6 +551,12 @@ body {
           position: relative;
           border: $primary-green solid 3px;
           border-radius: 20px;
+          overflow: hidden;
+          margin-bottom: 10px;
+          margin-right: 10px;
+          box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+          
+          
 
 
           &:hover {
@@ -542,26 +564,30 @@ body {
 
             img {
               filter: brightness(70%);
-
+              transform: scale(1.2);
+            
             }
 
 
             .text-link {
               color: $primary-green;
-              border: 1px solid $primary-green;
+              border-bottom: 1px solid $primary-green;
+              border-top: 1px solid $primary-green;
               border-radius: 10px;
               padding: 0.5rem;
+              
 
             }
           }
 
 
-          a img {
+          img {
             z-index: 0;
             width: 100%;
             height: auto;
             object-fit: contain;
             border: none;
+            transition: transform 0.6s ease-in-out,filter 0.6s ease;
 
 
 
@@ -578,6 +604,8 @@ body {
             transform: translate(-50%, -50%);
             font-size: 20px;
             text-decoration: none;
+
+           
 
           }
 

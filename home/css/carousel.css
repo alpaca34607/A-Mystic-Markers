@@ -23,68 +23,78 @@
 
 #carousel div img {
   width: 350px;
-  transition: width 1s;
+  transition: width 1s,transform 0.5s, opacity 0.5s, filter 2s;
   clip-path: polygon(
     31% 1%, 69% 1%, 99% 31%, 99% 69%, 69% 99%, 31% 99%, 1% 69%, 1% 31%
   );
+ 
   
 }
-#carousel div.hideLeft {
+/* #carousel div.hideLeft {
   left: 0%;
   opacity: 0;
   transform: translateY(50%) translateX(-50%);
-}
-#carousel div.hideLeft img {
+  z-index: 1;
+} */
+/* #carousel div.hideLeft img {
   width: 200px;
-}
-#carousel div.hideRight {
+  z-index: 1;
+} */
+/* #carousel div.hideRight {
   left: 100%;
   opacity: 0;
+  z-index: 1;
   transform: translateY(50%) translateX(-50%);
-}
-#carousel div.hideRight img {
+} */
+/* #carousel div.hideRight img {
   width: 200px;
-}
+  z-index: 1;
+} */
 #carousel div.prev {
   z-index: 5;
   left: 30%;
-  transform: translateY(30px) translateX(-50%);
+  transform: translateY(20px) translateX(-50%);
 }
 #carousel div.prev img {
+
   width: 300px;
 }
 #carousel div.prevLeftSecond {
-  z-index: 3; /* 比 hideLeft 高，但比 prev 低 */
+  /* z-index: 2; */
   left: 40%;
   transform: translateY(60%) translateX(-50%);
-  opacity: 0.7;
+  /* opacity: 0.7; */
   filter:brightness(60%);
 }
 #carousel div.prevLeftSecond img {
+
   width: 200px;
 }
 #carousel div.selected {
-  z-index: 10; /* 確保最高層 */
+  z-index: 10;
   left: 50%;
   transform: translateY(0px) translateX(-50%);
 }
 #carousel div.next {
   z-index: 5;
   left: 70%;
-  transform: translateY(30px) translateX(-50%);
+  transform: translateY(20px) translateX(-50%);
 }
 #carousel div.next img {
+  z-index: 5;
   width: 300px;
 }
 #carousel div.nextRightSecond {
-  z-index: 3; /* 比 hideRight 高，但比 next 低 */
+  z-index: 2;
   left: 60%;
   transform: translateY(60%) translateX(-50%);
-  opacity: 0.7;
+  /* opacity: 0.7; */
   filter:brightness(60%);
 }
 #carousel div.nextRightSecond img {
+
   width: 200px;
+  
 }
 
 .buttons {
