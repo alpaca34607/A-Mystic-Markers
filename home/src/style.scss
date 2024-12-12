@@ -236,17 +236,23 @@ body {
     background-size: 100%;
     background-position: right top;
     background-repeat: no-repeat;
+    
 
     width: 100%;
     min-height: 130vh;
 
 
     .fog-area {
-      position: relative;
-      top: 60vh;
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      left:0;
+      width: 100%;
+      height: 100vh;
       overflow: hidden; /* 防止出現卷軸 */
       border: #acff6c 1px solid;
       z-index: -1;
+      pointer-events: none;
       /* 模糊容器邊界 */
     }
 
@@ -254,7 +260,11 @@ body {
     // border:1px solid #B3B3B3;
 
     .logoXL {
+      position: absolute;
+      z-index: 1;
       width: 30%;
+      top:10%;
+      left:0%;
       min-width: 200px;
       margin-top: 130px;
       margin-left: 132px;
@@ -374,10 +384,6 @@ body {
       margin-top: 0;
       isolation: isolate;
       text-align: center;
-
-
-
-
 
       .laya-please {
         transform: translateY(100px);
@@ -629,6 +635,7 @@ body {
 
   }
 }
+
 
 
 

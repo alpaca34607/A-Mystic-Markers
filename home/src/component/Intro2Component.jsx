@@ -22,7 +22,7 @@ const Intro2Component = () => {
             const mouseX = e.pageX;
             const mouseY = e.pageY;
 
-            // 滑鼠移動
+            // 增大位移的比例，讓滑鼠移動一點就有較大的變化
             const mouseMovedX2 = (width / 2 - mouseX) / 15; // 水平移動
             const mouseMovedY2 = (height / 2 - mouseY) / 15; // 垂直移動
 
@@ -55,7 +55,7 @@ const Intro2Component = () => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     // 滾動進入視口，觸發滑動效果
-                    entry.target.style.transition = "transform 1s ease-in-out, opacity 1s ease-in-out";
+                    entry.target.style.transition = "none";  // 不再有過渡動畫
                     entry.target.style.transform = "translateY(0)";
                     entry.target.style.opacity = "1";
                 } else {
@@ -107,6 +107,8 @@ const Intro2Component = () => {
                     alt="paper2"
                 />
             </div>
+
+            <div id="intro3"></div>
         </div>
     );
 };

@@ -1,10 +1,9 @@
-import { useState } from "react";
+
 // import "../css/style.css";
 import "./style.scss";
 import Navbar from "./component/Navbar";
 import { Link, Route, Routes } from "react-router-dom";
 import Story from "./pages/Storys";
-import Home from "./pages/Home";
 import Map from "./pages/Map";
 import Contact from "./pages/Contact";
 import Forum from "./pages/Forum";
@@ -13,6 +12,7 @@ import Intro2Component from "./component/Intro2Component";
 import Carousel from "./component/Carousel";
 import ForumImg from "./component/ForumImg";
 import Fog from "./component/Fog";
+import FogMask from "./component/FogMask";
 
 function App() {
 
@@ -26,9 +26,12 @@ function App() {
        
         <section className="banner">
           <Navbar />
+          <FogMask>
           <div className="fog-area">
             <Fog/>
           </div>
+          </FogMask>
+          
           <div className="logoXL">
             <Link to="/">
               <img id="mark" src="/images/LOGO.svg" alt="神秘座標" />
