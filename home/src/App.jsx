@@ -1,6 +1,9 @@
 
 // import "../css/style.css";
 import "./style.scss";
+
+// import "../css/style.css";
+import "./style.scss";
 import Navbar from "./component/Navbar";
 import { Link, Route, Routes } from "react-router-dom";
 import Story from "./pages/Storys";
