@@ -43,7 +43,7 @@ $font-regular-18: (
   line-height: 1.8 // 180%
 );
 
-$font--18: (
+$font-medium-18: (
   font-family: $Chinese,
   font-weight: 500,
   font-size: 1.125rem, // 18px
@@ -81,6 +81,7 @@ $font-medium-48: (
 $font-EN-medium-40: (
   font-family: "Playfair Display",
   font-optical-sizing: auto,
+  font-size: 40px,
   font-weight: 500,
   font-style: italic
 );

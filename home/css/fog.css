@@ -1,0 +1,40 @@
+/* 容器限制 */
+.fog-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow:visible;
+  z-index: -1;
+
+}
+
+
+/* 粒子樣式 */
+.fog {
+
+  position: absolute;
+  background:url("/images/fog-particle.png");
+  animation: float infinite ease-out;
+  mix-blend-mode: screen;
+  z-index: -1;
+  border-radius: 50%;
+  opacity:60%;
+  filter:blur(6px);
+}
+
+
+/* 粒子浮動動畫 */
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(400px, -600px); /* 輕微移動 */
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+

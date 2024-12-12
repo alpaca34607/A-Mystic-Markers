@@ -1,0 +1,128 @@
+#carousel {
+  position: relative;
+  height: 400px;
+  margin: 300px auto 100px auto;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+}
+
+
+#carousel div {
+  position: absolute;
+  transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+  opacity: 1;
+  clip-path: polygon(
+    30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%
+  );
+  background-color:#acff6c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#carousel div img {
+  width: 350px;
+  transition: width 1s,transform 0.5s, opacity 0.5s, filter 2s;
+  clip-path: polygon(
+    31% 1%, 69% 1%, 99% 31%, 99% 69%, 69% 99%, 31% 99%, 1% 69%, 1% 31%
+  );
+ 
+  
+}
+/* #carousel div.hideLeft {
+  left: 0%;
+  opacity: 0;
+  transform: translateY(50%) translateX(-50%);
+  z-index: 1;
+} */
+/* #carousel div.hideLeft img {
+  width: 200px;
+  z-index: 1;
+} */
+/* #carousel div.hideRight {
+  left: 100%;
+  opacity: 0;
+  z-index: 1;
+  transform: translateY(50%) translateX(-50%);
+} */
+/* #carousel div.hideRight img {
+  width: 200px;
+  z-index: 1;
+} */
+#carousel div.prev {
+  z-index: 5;
+  left: 30%;
+  transform: translateY(20px) translateX(-50%);
+}
+#carousel div.prev img {
+
+  width: 300px;
+}
+#carousel div.prevLeftSecond {
+  /* z-index: 2; */
+  left: 40%;
+  transform: translateY(60%) translateX(-50%);
+  /* opacity: 0.7; */
+  filter:brightness(60%);
+}
+#carousel div.prevLeftSecond img {
+
+  width: 200px;
+}
+#carousel div.selected {
+  z-index: 10;
+  left: 50%;
+  transform: translateY(0px) translateX(-50%);
+}
+#carousel div.next {
+  z-index: 5;
+  left: 70%;
+  transform: translateY(20px) translateX(-50%);
+}
+#carousel div.next img {
+  z-index: 5;
+  width: 300px;
+}
+#carousel div.nextRightSecond {
+  z-index: 2;
+  left: 60%;
+  transform: translateY(60%) translateX(-50%);
+  /* opacity: 0.7; */
+  filter:brightness(60%);
+}
+#carousel div.nextRightSecond img {
+
+  width: 200px;
+  
+}
+
+.buttons {
+  position: absolute;
+  top: 177vh;
+  left: 50%;
+  transform: translateX(-50%);
+  
+
+  
+}
+
+.buttons .icon-btn {
+  background: none;
+  border: none;
+  transition: all 0.3s ease; 
+}
+
+.buttons .icon-btn .icon-img{
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  margin: 0 25px;
+  padding: 10px 20px;
+  transition: filter 0.3s ease; 
+}
+.buttons .icon-btn:hover .icon-img{
+filter : hue-rotate(150deg);
+}
