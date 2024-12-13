@@ -1,7 +1,5 @@
 
-// import "../css/style.css";
 import "./style.scss";
-
 // import "../css/style.css";
 import "./style.scss";
 import Navbar from "./component/Navbar";
@@ -15,7 +13,9 @@ import Intro2Component from "./component/Intro2Component";
 import Carousel from "./component/Carousel";
 import ForumImg from "./component/ForumImg";
 import Fog from "./component/Fog";
-import FogMask from "./component/FogMask";
+
+
+
 
 function App() {
 
@@ -108,10 +108,10 @@ function App() {
       </main>
       }/>
    
-     <Route path="/about" element={<Story/>}/>
-     <Route path="/news" element={<Map/>}/>
-     <Route path="/news" element={<Forum/>}/>
-     <Route path="/news" element={<Contact/>}/>
+     <Route path="/Story" element={<Story/>}/>
+     <Route path="/Map" element={<Map/>}/>
+     <Route path="/Forum" element={<Forum/>}/>
+     <Route path="/Contact" element={<Contact/>}/>
    </Routes>
  
    </>

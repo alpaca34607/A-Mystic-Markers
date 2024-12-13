@@ -590,7 +590,6 @@ body {
   line-height: 1.8;
 }
 .home .intro #intro2 {
-  top: 0;
   /* 保持在 intro1 下面 */
   mix-blend-mode: lighten;
   margin-top: 0;

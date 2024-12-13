@@ -34,7 +34,7 @@ const generateRandomFog = (count) => {
 const Fog = ({ className }) => {
   return (
     <div className={`fog-container ${className}`}>
-      {generateRandomFog(700)} {/* 調整粒子數量 */}
+      {generateRandomFog(600)} {/* 調整粒子數量 */}
     </div>
   );
 };
