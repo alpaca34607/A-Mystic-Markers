@@ -1,6 +1,8 @@
 @use 'reset';
 @use 'variables'as *;
 @use 'function'as *;
+@use 'variables'as *;
+@use 'function'as *;
 @use 'keyframes';
 
 
@@ -93,6 +95,7 @@ a {
 
   &:hover {
     filter: invert(42%) saturate(1352%) hue-rotate(140deg) brightness(120%) contrast(119%);
+    filter: invert(42%) saturate(1352%) hue-rotate(140deg) brightness(120%) contrast(119%);
   }
 
   img {
@@ -124,6 +127,7 @@ a {
   margin-bottom: 5px;
 
 
+
   a {
     color: $primary-purple;
     font-weight: 400;
@@ -134,7 +138,14 @@ a {
     border-right: transparent 1px solid;
 
 
+    border-left: transparent 1px solid;
+    border-right: transparent 1px solid;
+
+
     &:hover {
+
+      border-left: $primary-purple 1px solid;
+      border-right: $primary-purple 1px solid;
 
       border-left: $primary-purple 1px solid;
       border-right: $primary-purple 1px solid;
@@ -225,6 +236,8 @@ body {
 .home {
   background-image: url('/images/noise.png');
   background-size: auto;
+  background-image: url('/images/noise.png');
+  background-size: auto;
   background-repeat: repeat;
   background-blend-mode: hard-light;
 
@@ -234,6 +247,8 @@ body {
     background-size: 100%;
     background-position: right top;
     background-repeat: no-repeat;
+    
+
     
 
 
@@ -310,16 +325,27 @@ body {
       z-index: 1;
       top: 10%;
       left: 10%;
+      top: 10%;
+      left: 10%;
       margin-top: 130px;
+      margin-left: 135px;
       margin-left: 135px;
       display: flex;
       justify-content: flex-end;
+      
+
       
 
 
 
       img {
         margin: 0;
+        animation: glowEffect 5s linear infinite;
+
+        .logoB {
+          width: 100%;
+
+        }
         animation: glowEffect 5s linear infinite;
 
         .logoB {
@@ -338,6 +364,7 @@ body {
         margin-top: 20px;
 
       }
+
 
 
 
@@ -622,8 +649,11 @@ body {
 
         #Legends {
           position: absolute;
+          position: absolute;
           margin-bottom: 45px;
           width: fit-content;
+
+          top: 0%;
 
           top: 0%;
           left: 0%;
