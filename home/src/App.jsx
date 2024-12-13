@@ -1,6 +1,9 @@
 
 // import "../css/style.css";
 import "./style.scss";
+
+// import "../css/style.css";
+import "./style.scss";
 import Navbar from "./component/Navbar";
 import { Link, Route, Routes } from "react-router-dom";
 import Story from "./pages/Storys";
@@ -26,16 +29,19 @@ function App() {
        
         <section className="banner">
           <Navbar />
-          <FogMask>
+          <div id="fog-masked">
+         <div id="fog-rotate">
           <div className="fog-area">
             <Fog/>
           </div>
-          </FogMask>
+          </div>
+          </div>
+        
           
           <div className="logoXL">
             <Link to="/">
               <img id="mark" src="/images/LOGO.svg" alt="神秘座標" />
-              <img src="/images/logo_XL.svg" alt="神秘座標" />
+              <img id="logoB"src="/images/logo_XL.svg" alt="神秘座標" />
               <div className="p"><GlowingText text="MYSTIC MARKERS" /></div>
 
             </Link>
@@ -56,6 +62,7 @@ function App() {
                 </p>
               </div>
             </div>
+            
           </div>
           <Intro2Component />
           <Carousel />

@@ -1,7 +1,12 @@
+#carousel-area {
+  position: relative;
+  overflow: hidden;
+  height:auto;
+}
 #carousel {
   position: relative;
   height: 400px;
-  margin: 300px auto 100px auto;
+  margin: 350px auto 100px auto;
   top: 50%;
   transform: translateY(-50%);
   overflow: hidden;
@@ -19,17 +24,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding:0.5px;
+  overflow: hidden;
 }
 
 #carousel div img {
   width: 350px;
   transition: width 1s,transform 0.5s, opacity 0.5s, filter 2s;
   clip-path: polygon(
-    31% 1%, 69% 1%, 99% 31%, 99% 69%, 69% 99%, 31% 99%, 1% 69%, 1% 31%
-  );
- 
-  
+    30.5% 0.5%, 69.5% 0.5%, 99.5% 30.5%, 99.5% 69.5%, 69.5% 99.5%, 30.5% 99.5%, 0.5% 69.5%, 0.5% 30.5%
+  ); 
 }
+
+
 /* #carousel div.hideLeft {
   left: 0%;
   opacity: 0;
@@ -52,7 +59,7 @@
 } */
 #carousel div.prev {
   z-index: 5;
-  left: 30%;
+  left: 28%;
   transform: translateY(20px) translateX(-50%);
 }
 #carousel div.prev img {
@@ -60,48 +67,55 @@
   width: 300px;
 }
 #carousel div.prevLeftSecond {
-  /* z-index: 2; */
+  z-index: 2;
   left: 40%;
-  transform: translateY(60%) translateX(-50%);
+  transform: translateY(25%) translateX(-60%);
   /* opacity: 0.7; */
   filter:brightness(60%);
 }
 #carousel div.prevLeftSecond img {
 
-  width: 200px;
+  width: 250px;
 }
 #carousel div.selected {
   z-index: 10;
   left: 50%;
-  transform: translateY(0px) translateX(-50%);
+  transform: translateY(0px) translateX(-50%)
 }
+#carousel div.selected img:hover {
+    
+  filter: brightness(70%);
+  transform: scale(1.2);
+}
+
+
 #carousel div.next {
   z-index: 5;
-  left: 70%;
+  left: 72%;
   transform: translateY(20px) translateX(-50%);
 }
 #carousel div.next img {
-  z-index: 5;
+  /* z-index: 5; */
   width: 300px;
 }
 #carousel div.nextRightSecond {
-  z-index: 2;
+  /* z-index: 2; */
   left: 60%;
-  transform: translateY(60%) translateX(-50%);
+  transform: translateY(25%) translateX(-40%);
   /* opacity: 0.7; */
   filter:brightness(60%);
 }
 #carousel div.nextRightSecond img {
 
-  width: 200px;
+  width: 250px;
   
 }
 
 .buttons {
-  position: absolute;
-  top: 177vh;
-  left: 50%;
-  transform: translateX(-50%);
+position: absolute;
+top:600px;
+left:50%;
+transform: translateX(-50%);
   
 
   

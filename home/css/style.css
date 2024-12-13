@@ -382,6 +382,46 @@ body {
   width: 100%;
   min-height: 130vh;
 }
+.home .banner #fog-masked {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 130vh;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  /* 模糊容器邊界 */
+  /* 使用遮罩限制霧的區域 */
+  mask-image: url("/images/fog-mask1.png");
+  /* 替換為實際圖片路徑 */
+  mask-repeat: no-repeat;
+  mask-size: 100% auto;
+  mask-position: top 0;
+  /* Webkit 瀏覽器支持 */
+  -webkit-mask-image: url("/images/fog-mask1.png");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+}
+.home .banner #fog-masked #fog-rotate {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transform: rotate(-90deg);
+}
+.home .banner #fog-masked #fog-rotate .fog-area {
+  position: absolute;
+  /* 防止出現卷軸 */
+  pointer-events: none;
+  top: 0;
+  left: 100px;
+  width: 100%;
+  height: 100%;
+}
 .home .banner .fog-area {
   position: absolute;
   overflow: hidden;
@@ -390,7 +430,6 @@ body {
   width: 100%;
   height: 100vh;
   overflow: hidden; /* 防止出現卷軸 */
-  border: #acff6c 1px solid;
   z-index: -1;
   pointer-events: none;
   /* 模糊容器邊界 */
@@ -398,19 +437,19 @@ body {
 .home .banner .logoXL {
   position: absolute;
   z-index: 1;
-  width: 30%;
   top: 10%;
-  left: 0%;
-  min-width: 200px;
+  left: 10%;
   margin-top: 130px;
-  margin-left: 132px;
+  margin-left: 135px;
   display: flex;
   justify-content: flex-end;
 }
 .home .banner .logoXL img {
   margin: 0;
-  width: 100%;
   animation: glowEffect 5s linear infinite;
+}
+.home .banner .logoXL img .logoB {
+  width: 100%;
 }
 .home .banner .logoXL .p {
   color: #acff6c;
@@ -470,6 +509,46 @@ body {
 .home .intro #intro1 {
   display: flex;
   justify-content: center;
+}
+.home .intro #intro1 #fog-masked {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 130vh;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  /* 模糊容器邊界 */
+  /* 使用遮罩限制霧的區域 */
+  mask-image: url("/images/fog-mask1.png");
+  /* 替換為實際圖片路徑 */
+  mask-repeat: no-repeat;
+  mask-size: 100% auto;
+  mask-position: top 0;
+  /* Webkit 瀏覽器支持 */
+  -webkit-mask-image: url("/images/fog-mask1.png");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+}
+.home .intro #intro1 #fog-masked #fog-rotate {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transform: rotate(-90deg);
+}
+.home .intro #intro1 #fog-masked #fog-rotate .fog-area {
+  position: absolute;
+  /* 防止出現卷軸 */
+  pointer-events: none;
+  top: 0;
+  left: 100px;
+  width: 100%;
+  height: 100%;
 }
 .home .intro #intro1 .door {
   position: relative;

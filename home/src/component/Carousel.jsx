@@ -35,7 +35,7 @@ const Carousel = () => {
   
 
   return (
-    <main>
+    <div id="carousel-area">
       <div id="carousel">
         {images.map((src, index) => (
           <div className={getClassName(index)} key={index}>
@@ -47,7 +47,7 @@ const Carousel = () => {
         <button className="icon-btn" onClick={() => moveToSelected("prev")}><img src="/images/arrow_L.svg" alt="prev" className='icon-img'/></button>
         <button className="icon-btn"onClick={() => moveToSelected("next")}><img src="/images/arrow_R.svg" alt="next" className='icon-img' /></button>
       </div>
-    </main>
+    </div>
   );
 };
 
