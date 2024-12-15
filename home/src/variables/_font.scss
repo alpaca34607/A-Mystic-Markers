@@ -29,7 +29,7 @@ $font-medium-16: (
 
 $font-regular-16: (
   font-family: $Chinese,
-  font-weight: 400,
+  font-weight: 300,
   font-size: 1rem, // 16px
   letter-spacing: 0.05rem, // 5%
   line-height: 2 // 200%
@@ -48,6 +48,13 @@ $font-medium-18: (
   font-weight: 500,
   font-size: 1.125rem, // 18px
   letter-spacing: 0.18rem, // 15%
+  line-height: 1.5 // 150%
+);
+$font-regular-18-n: (
+  font-family: $Chinese,
+  font-weight: 400,
+  font-size: 1.125rem, // 18px
+  letter-spacing: 0.05rem, // 5%
   line-height: 1.5 // 150%
 );
 

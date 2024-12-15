@@ -134,27 +134,33 @@ textarea {
 /* 卷軸樣式 */
 ::-webkit-scrollbar { //卷動長條
     height: 12px; //有水平卷軸時設定
-    background-color: $bg-1;
+    background: transparent;
+    border: 1px solid $primary-purple ;
     border-radius: 99px;//加圓角時不加上下按鈕才能有圓角
+    z-index: 1; /* 設置較低的 z-index */
+    cursor: default;
   }
   ::-webkit-scrollbar-button { //上下按鈕
     background: $grey;
     width: 12px;//卷軸按鈕寬
     height: 12px;//卷軸按鈕高
+    cursor: default;
+    
   }
   ::-webkit-scrollbar-thumb { //卷軸手柄
     background: transparent;
     border: 1px solid $primary-purple ;
+    z-index: 1; /* 設置較低的 z-index */
+    cursor: default;
     
   }
-  ::-webkit-scrollbar-track { //滾動條的軌道，會覆蓋scrollbar底色
-    background: $deep;
-    border: 1px solid $primary-purple ;
-  }
+
   ::-webkit-scrollbar-corner { //直橫軸交集的小缺角顏色
     background: $grey;
+    cursor: default;
   }
   ::-webkit-resizer{  //多行填字欄位右下縮放框框按鈕
     background: $primary-green;
+    cursor: default;
 
   }

@@ -1,26 +1,25 @@
 @use 'reset';
 @use 'variables'as *;
 @use 'function'as *;
-@use 'variables'as *;
-@use 'function'as *;
 @use 'keyframes';
 
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+TC:wght@100..900&family=Playfair+Display:ital,wght@1,500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Handjet:wght@100..900&family=Mina&family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Zen+Maru+Gothic&display=swap');
 
 /* 重置字體 */
 
 body {
+  position: relative;
   font-family: $Chinese;
-
   /* 系統預設的無襯線字 */
   font-size: 100%;
   line-height: 1.5;
-
-  /* 行高 */
   background-color: #333;
+  cursor: none;
 }
+
+
+
 
 /* 重置標題字重 */
 
@@ -59,19 +58,16 @@ img {
 
 /* 重置連接 */
 
+/* 基本超連結樣式 */
 a {
+  cursor: none;
   display: block;
-
-  /* 將 a 都變成 block(區塊) 才能設定某區塊範圍都有 a 連結可以按*/
-  /* 預設是 inline 改成 block。才能設定間距以及寬高 */
-  /* 除非有文字需求才會用原本預設 inline */
   text-decoration: none;
-
-  /*底線拿掉*/
   color: white;
-
-  /* 基本超連結顏色 */
 }
+
+
+
 
 /* Menu */
 
@@ -94,19 +90,22 @@ a {
   align-items: center;
 
   &:hover {
+
     filter: invert(42%) saturate(1352%) hue-rotate(140deg) brightness(120%) contrast(119%);
     filter: invert(42%) saturate(1352%) hue-rotate(140deg) brightness(120%) contrast(119%);
   }
 
   img {
-    width: 40px;
-    margin: 8px
+    width: 50px;
+    margin-right: 8px;
+    margin-bottom: 10px;
+
   }
 }
 
 .logoText {
-  font-family: 'Roboto';
-  font-size: 28px;
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
   color: $primary-green;
 
 }
@@ -138,22 +137,16 @@ a {
     border-right: transparent 1px solid;
 
 
-    border-left: transparent 1px solid;
-    border-right: transparent 1px solid;
-
-
     &:hover {
-
-      border-left: $primary-purple 1px solid;
-      border-right: $primary-purple 1px solid;
 
       border-left: $primary-purple 1px solid;
       border-right: $primary-purple 1px solid;
     }
 
-    /* transform: ; */
+
   }
 }
+
 
 .navigation {
   width: 277px;
@@ -164,13 +157,18 @@ a {
   /* justify-content: ; */
   #Group {
 
-    margin: 10px;
-    width: 26px;
+    margin-right: 20px;
+    width: 30px;
   }
+  #news {
+    margin-right: 20px;
+    width: 24px;
+  }
+  
 
   #menu {
 
-    width: 64px;
+    width: 54px;
     margin-left: 15px;
 
   }
@@ -193,8 +191,7 @@ a {
 body {
   margin: 0;
   padding: 0;
-  transform-style: preserve-3d;
-  overflow: hidden;
+  overflow: auto;
   background-color: var(--Neutral-Black);
   color: #ffffff;
 
@@ -224,18 +221,16 @@ body {
   color: var(--primary-green);
   border: none;
   background: none;
-  cursor: pointer;
   font-size: 18px;
   letter-spacing: 2.7px;
 }
 
-/*HOME  */
+
 
 /*HOME  */
 
 .home {
-  background-image: url('/images/noise.png');
-  background-size: auto;
+  position: relative;
   background-image: url('/images/noise.png');
   background-size: auto;
   background-repeat: repeat;
@@ -247,14 +242,11 @@ body {
     background-size: 100%;
     background-position: right top;
     background-repeat: no-repeat;
-    
-
-    
-
 
     width: 100%;
     min-height: 130vh;
-    #fog-masked{
+
+    #fog-masked {
 
       position: absolute;
       overflow: hidden;
@@ -264,53 +256,56 @@ body {
       height: 100%;
       z-index: 1;
       pointer-events: none;
-       /* 模糊容器邊界 */
-    /* 使用遮罩限制霧的區域 */
-    mask-image: url('/images/fog-mask1.png');
-    /* 替換為實際圖片路徑 */
-    mask-repeat: no-repeat;
-    mask-size: 100% auto;
-    mask-position: top 0;
+      /* 模糊容器邊界 */
+      /* 使用遮罩限制霧的區域 */
+      mask-image: url('/images/fog-mask1.png');
+      /* 替換為實際圖片路徑 */
+      mask-repeat: no-repeat;
+      mask-size: 100% auto;
+      mask-position: top 0;
 
-    /* Webkit 瀏覽器支持 */
-    -webkit-mask-image: url('/images/fog-mask1.png');
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: cover;
-    #fog-rotate{
-      position: absolute;
-      overflow: hidden;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      transform: rotate(-90deg);
-      .fog-area {
+      /* Webkit 瀏覽器支持 */
+      -webkit-mask-image: url('/images/fog-mask1.png');
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: cover;
+
+      #fog-rotate {
         position: absolute;
-      /* 防止出現卷軸 */
-      // border: #acff6c 1px solid;
-     
-      pointer-events: none;
-      top: 0;
-      left: 100px;
-      width: 100%;
-      height: 100%;
-    
-   
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transform: rotate(-90deg);
+
+        .fog-area {
+          position: absolute;
+          /* 防止出現卷軸 */
+          // border: #acff6c 1px solid;
+
+          pointer-events: none;
+          top: 0;
+          left: 100px;
+          width: 100%;
+          height: 100%;
+
+
+        }
+      }
     }
-  }
-  }
-    
+
 
 
     .fog-area {
       position: absolute;
       overflow: hidden;
       top: 0;
-      left:0;
+      left: 0;
       width: 100%;
       height: 100vh;
-      overflow: hidden; /* 防止出現卷軸 */
+      overflow: hidden;
+      /* 防止出現卷軸 */
       // border: #acff6c 1px solid;
       z-index: -1;
       pointer-events: none;
@@ -324,35 +319,20 @@ body {
       position: absolute;
       z-index: 1;
       top: 10%;
-      left: 10%;
-      top: 10%;
-      left: 10%;
+      left: 5%;
       margin-top: 130px;
-      margin-left: 135px;
       margin-left: 135px;
       display: flex;
       justify-content: flex-end;
-      
 
-      
+    
 
-
-
-      img {
-        margin: 0;
-        animation: glowEffect 5s linear infinite;
-
-        .logoB {
-          width: 100%;
-
+        #logoB {
+          width: 380px;
+          margin: 0;
+          animation: glowEffect 5s linear infinite;
         }
-        animation: glowEffect 5s linear infinite;
-
-        .logoB {
-          width: 100%;
-
-        }
-      }
+    
 
       .p {
 
@@ -389,15 +369,15 @@ body {
   }
 
   .intro {
-    transform-style: preserve-3d;
-    perspective-origin: center;
     position: relative;
+    // transform-style: preserve-3d;
+    // perspective-origin: center;
     background-color: $deep;
     width: 100%;
-    overflow-y: visible;
-    overflow-x: hidden;
+    overflow: hidden;
     mix-blend-mode: lighten;
     height: auto;
+    cursor: none;
 
     .title {
       @extend %box-center;
@@ -411,88 +391,78 @@ body {
 
       h2 {
         @include font-style($font-medium-48);
-        color: #acff6c;
+        color: $primary-green;
+       
+
+        &:hover {
+          cursor: none;
+          font-family: "Handjet", serif;
+          font-weight: 900;
+          font-style: normal;
+          text-shadow: 5px 5px 0 rgba(255, 0, 0, 0.4), -5px -5px 0 rgba(0, 255, 0, 0.4);
+        
+        }
       }
 
       h3 {
         @include font-style($font-medium-24);
         margin-top: 16px;
+        &:hover {
+          cursor: none;
+          text-shadow: 5px 5px 0 rgba(255, 0, 0, 0.4), -5px -5px 0 rgba(0, 255, 0, 0.4);
+        
+        }
       }
+
+
     }
 
     #intro1 {
+      position: relative;
       display: flex;
       justify-content: center;
- #fog-masked{
-
-      position: absolute;
       overflow: hidden;
-      top: 0;
-      left: 0;
-      width: 130vh;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
-       /* 模糊容器邊界 */
-    /* 使用遮罩限制霧的區域 */
-    mask-image: url('/images/fog-mask1.png');
-    /* 替換為實際圖片路徑 */
-    mask-repeat: no-repeat;
-    mask-size: 100% auto;
-    mask-position: top 0;
-
-    /* Webkit 瀏覽器支持 */
-    -webkit-mask-image: url('/images/fog-mask1.png');
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: cover;
-    #fog-rotate{
-      position: absolute;
-      overflow: hidden;
-      top: 0;
-      left: 0;
       width: 100%;
-      height: 100%;
-      z-index: 1;
-      transform: rotate(-90deg);
-      .fog-area {
-        position: absolute;
-      /* 防止出現卷軸 */
-      // border: #acff6c 1px solid;
+      margin-top: 60px;
+      height: auto;
      
-      pointer-events: none;
-      top: 0;
-      left: 100px;
-      width: 100%;
-      height: 100%;
-    
-   
-    }
-  }
-  }
-    
-
-
+      
 
 
       .door {
         position: relative;
-        width: 940px;
-        height: 100vh;
+        top:0;
+        width: 100%;
+        overflow: hidden;
+        min-height: 105vh;
+        height: auto;
+        overflow: hidden;
+    
 
         figure {
+          position: absolute;
+          width: 65%px;
+          top:0;
+          left: 15%;
+          min-width: 600px;
           animation: glowEffect-W 3s linear infinite;
           z-index: 3;
+          overflow: hidden;
+          padding-left: 100px;
+
         }
 
 
         #intro_Q {
           position: absolute;
           top: 0;
-          right: 20px;
+          margin: right 100px;;
+          right: 25%;
           width: 355px;
           display: column;
 
           p {
+            
             margin-top: 30px;
             margin-left: 21px;
             @include font-style($font-regular-18);
@@ -511,19 +481,22 @@ body {
       margin-top: 0;
       isolation: isolate;
       text-align: center;
+      overflow: hidden;
 
-      .laya-please {
-        transform: translateY(100px);
-        opacity: 0;
-        transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-      }
 
-      /* 滑入時改變位置和透明度 */
-      .laya-please.slide-in {
-        opacity: 1;
-        transform: translateY(0);
-        /* 滑動到原位 */
-      }
+      // .laya-please {
+      //   transform: translateY(100px);
+      //   opacity: 0;
+      //   transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+
+      // }
+
+      // /* 滑入時改變位置和透明度 */
+      // .laya-please.slide-in {
+      //   opacity: 1;
+      //   transform: translateY(0);
+      //   /* 滑動到原位 */
+      // }
 
       /* 完成動畫後，滑鼠事件接管 transform */
       .laya-please.interactive {
@@ -540,7 +513,7 @@ body {
         // transform: translateZ(-50px) translateY(-10vh) scale(1.5);
         z-index: 2;
         position: absolute;
-        top: 0vh;
+        top: 20vh;
         left: 100px;
         opacity: 0;
         transform: translateY(50px);
@@ -562,7 +535,7 @@ body {
 
       .paper2 {
         position: absolute;
-        top: 90vh;
+        top: 120vh;
         left: 0;
         border: #ffffff 1px;
 
@@ -611,7 +584,7 @@ body {
           flex-direction: column;
           width: auto;
           text-align: left;
-          margin-top: 10%;
+          margin-top: 5%;
 
           h4 {
             color: $primary-green;
@@ -630,17 +603,18 @@ body {
     #intro4 {
 
       margin-top: 200px;
-      margin-bottom: 200px;
+      margin-bottom: 100px;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
       width: 100%;
+      overflow: hidden;
 
 
       .forum-gallery {
         position: relative;
-        margin-top: 30px;
+        margin-top: 60px;
         height: 620px;
         display: inline-block;
         width: 1120px;
@@ -690,10 +664,6 @@ body {
           left: 32.5%;
         }
 
-
-
-
-
         .image-link {
           width: auto;
           display: inline-block;
@@ -709,6 +679,7 @@ body {
 
 
           &:hover {
+            cursor: none;
             border: $primary-purple solid 3px;
 
             img {
@@ -723,6 +694,8 @@ body {
               border-top: 1px solid $primary-green;
               border-radius: 10px;
               padding: 0.5rem;
+              @include font-style($font-regular-18-n);
+            
 
             }
           }
@@ -742,6 +715,7 @@ body {
 
           .text-link {
             position: absolute;
+            @include font-style($font-regular-16);
             margin: 0;
             padding: 0;
             text-align: center;
@@ -749,8 +723,8 @@ body {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 20px;
             text-decoration: none;
+            
 
 
           }
@@ -765,6 +739,137 @@ body {
   }
 }
 
+/* 滑鼠 */
+#custom-cursor {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  background: url('/images/cursor.svg') no-repeat center / contain;
+  pointer-events: none;
+  z-index: 99999;
+  mix-blend-mode: normal;
+  transform: translate(-50%, -50%);
+  /* 確保指標居中 */
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 20px;
+
+}
+
+/* 外框動畫 - 初始狀態 */
+#custom-cursor::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  pointer-events: none;
+  opacity: 0;
+  animation: none;
+  /* 禁用動畫 */
+}
+
+/* 在 hover 狀態下啟用動畫 */
+a:hover #custom-cursor::after {
+  opacity: 1;
+  /* 確保動畫可見 */
+  animation: expand .5s infinite linear;
+  /* 啟用動畫 */
+}
+
+a:hover+#custom-cursor,
+a:hover~#custom-cursor {
+  mix-blend-mode: difference;
+}
+
+#custom-cursor {
+  &.hovered::after {
+    opacity: 1;
+    animation: expand 2.5s infinite linear;
+  }
+}
+
+
+/* 定義動畫 */
+@keyframes expand {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(3.5);
+    opacity: 0;
+  }
+}
+
+footer {
+  display: inline-block;
+  width: 100%;
+  height: 350px;
+  
+  background-image: url('/images/footer-paper.png');
+  background-repeat: no-repeat;
+  
+
+
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 135px 0 135px;
+    width: 100%;
+    overflow: hidden;
+   
+    img {
+      margin-top: 70px;
+      margin-right: 135px;
+      display: block;
+      width: 300px;
+      mix-blend-mode: exclusion;
+    }
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      small{
+        color: #6C5387;
+        margin-left: 60px;
+      }
+
+      .link {
+        display: flex;
+        flex-direction: row;
+
+        li {
+          margin-top: 40px;
+          margin-left: 60px;
+
+          a {
+            color: #ffffff;
+            @include font-style($font-regular-16);
+
+            &:hover {
+              color: $primary-purple;
+
+            }
+          }
+        
+          
+
+
+        }
+      }
+    }
+
+  }
+
+}
 
 
 
