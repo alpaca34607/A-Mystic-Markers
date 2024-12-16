@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "../../css/carousel.css";
 
 const images = [
-  "/images/故事頁介紹1.png",
-  "/images/故事頁介紹2.png",
-  "/images/故事頁介紹3.png",
-  "/images/故事頁介紹4.png",
-  "/images/故事頁介紹5.png",
+  "/images/storyintro1.jpg",
+  "/images/storyintro2.jpg",
+  "/images/storyintro3.jpg",
+  "/images/storyintro4.jpg",
+  "/images/storyintro5.jpg",
 ];
 
 const Carousel = () => {
@@ -39,7 +39,9 @@ const Carousel = () => {
       <div id="carousel">
         {images.map((src, index) => (
           <div className={getClassName(index)} key={index}>
+            <div className="img-wrap">
             <img src={src} alt={`Carousel item ${index}`} />
+          </div>
           </div>
         ))}
       </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "../../css/style.css";
+import SectionTitle from "./SectionTitle";
 
 const Intro2Component = () => {
     const targetRef = useRef(null);
@@ -84,32 +85,25 @@ const Intro2Component = () => {
     }, []);
 
     return (
+       
         <div id="intro2">
-            <div className="title">
-                <h2>怪談博物館</h2>
-                <h3>
-                    精選靈異故事、都市傳說，帶你進入未知世界，享受身歷其境的驚悚與神秘氛圍。
-                </h3>
-            </div>
-
             <div className="paper">
                 <img
                     ref={targetRef}
                     className="paper1 laya-please layer-3"
                     data-speed="2"
-                    src="/images/paper_1.png"
+                    src="/images/paper_1.jpg"
                     alt="paper1"
                 />
                 <img
                     className="paper2 laya-please layer-4"
                     data-speed="1"
-                    src="/images/paper_2.png"
+                    src="/images/paper_2.jpg"
                     alt="paper2"
                 />
             </div>
-
-            <div id="intro3"></div>
-        </div>
+            </div>
+        
     );
 };
 
