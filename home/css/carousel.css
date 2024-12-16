@@ -48,28 +48,6 @@
 }
 
 
-
-
-/* #carousel div.hideLeft {
-  left: 0%;
-  opacity: 0;
-  transform: translateY(50%) translateX(-50%);
-  z-index: 1;
-} */
-/* #carousel div.hideLeft img {
-  width: 230px;
-  z-index: 1;
-} */
-/* #carousel div.hideRight {
-  left: 100%;
-  opacity: 0;
-  z-index: 1;
-  transform: translateY(50%) translateX(-50%);
-} */
-/* #carousel div.hideRight img {
-  width: 230px;
-  z-index: 1;
-} */
 #carousel div.prev {
   z-index: 5;
   left: 28%;
