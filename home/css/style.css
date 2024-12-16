@@ -142,7 +142,7 @@ textarea {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: transparent;
+  background: #B3B3B3;
   border: 1px solid #B595FF;
   z-index: 1; /* 設置較低的 z-index */
   cursor: default;
@@ -378,21 +378,24 @@ body {
 }
 .home .banner {
   position: relative;
-  background-image: url("/images/home_banner.png");
+  background-image: url("/images/home_banner.jpg");
   background-size: 100%;
   background-position: right top;
   background-repeat: no-repeat;
+  mix-blend-mode: lighten;
+  filter: brightness(105%);
+  overflow: hidden;
   width: 100%;
-  min-height: 130vh;
+  min-height: 110vh;
 }
-.home .banner #fog-masked {
+.home .banner #fog-masked-g {
   position: absolute;
   overflow: hidden;
   top: 0;
   left: 0;
-  width: 130vh;
+  width: 100vh;
   height: 100%;
-  z-index: 1;
+  z-index: -2;
   pointer-events: none;
   /* 使用遮罩限制霧的區域 */
   mask-image: url("/images/fog-mask1.png");
@@ -404,25 +407,17 @@ body {
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: cover;
 }
-.home .banner #fog-masked #fog-rotate {
+.home .banner #fog-masked-g #fog-rotate-g {
   position: absolute;
   overflow: hidden;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: -2;
   transform: rotate(-90deg);
 }
-.home .banner #fog-masked #fog-rotate .fog-area {
-  position: absolute;
-  pointer-events: none;
-  top: 0;
-  left: 100px;
-  width: 100%;
-  height: 100%;
-}
-.home .banner .fog-area {
+.home .banner #fog-masked-g #fog-rotate-g .fog-area-g {
   position: absolute;
   overflow: hidden;
   top: 0;
@@ -430,8 +425,28 @@ body {
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  z-index: -2;
+  pointer-events: none;
+}
+.home .banner .fog-area-p {
+  position: absolute;
+  overflow: hidden;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: -1;
   pointer-events: none;
+  /* 使用遮罩限制霧的區域 */
+  mask-image: url("/images/fog-mask2.png");
+  mask-repeat: no-repeat;
+  mask-size: auto;
+  mask-position: top 0;
+  /* Webkit 瀏覽器支持 */
+  -webkit-mask-image: url("/images/fog-mask2.png");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+  -webkit-mask-position: top 0;
 }
 .home .banner .logoXL {
   position: absolute;
@@ -514,22 +529,21 @@ body {
 }
 .home .intro #intro1 {
   position: relative;
-  position: relative;
   display: flex;
   justify-content: center;
   overflow: hidden;
   width: 100%;
   margin-top: 60px;
   height: auto;
+  min-height: 105vh;
 }
 .home .intro #intro1 .door {
-  position: relative;
-  top: 0;
+  position: absolute;
+  top: 20%;
   width: 100%;
+  height: 100vh;
   overflow: hidden;
-  min-height: 105vh;
-  height: auto;
-  overflow: hidden;
+  z-index: 4;
 }
 .home .intro #intro1 .door figure {
   position: absolute;
@@ -544,11 +558,12 @@ body {
 }
 .home .intro #intro1 .door #intro_Q {
   position: absolute;
-  top: 0;
+  top: 0%;
   margin: right 100px;
   right: 25%;
   width: 355px;
   display: column;
+  z-index: 4;
 }
 .home .intro #intro1 .door #intro_Q p {
   margin-top: 30px;
@@ -558,6 +573,16 @@ body {
   font-size: 1.125rem;
   letter-spacing: 0.18rem;
   line-height: 1.8;
+}
+.home .intro #intro1 .intro1fog-G {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  z-index: 0;
+  width: 150%;
+  mix-blend-mode: lighten;
+  opacity: 0.8;
+  overflow: hidden;
 }
 .home .intro #intro2 {
   mix-blend-mode: lighten;
@@ -630,8 +655,8 @@ body {
   flex-direction: column;
   width: auto;
   text-align: left;
-  margin-top: 5%;
-  margin-top: 5%;
+  margin-left: 5%;
+  margin-top: 3%;
 }
 .home .intro #intro3 .map-area .map-intro h4 {
   color: #acff6c;
@@ -647,6 +672,8 @@ body {
   font-size: 1.125rem;
   letter-spacing: 0.18rem;
   line-height: 1.5;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 .home .intro #intro4 {
   margin-top: 200px;
@@ -733,7 +760,6 @@ body {
   font-weight: 400;
   font-size: 1.125rem;
   letter-spacing: 0.05rem;
-  line-height: 1.5;
 }
 .home .intro #intro4 .forum-gallery .image-link img {
   z-index: 0;

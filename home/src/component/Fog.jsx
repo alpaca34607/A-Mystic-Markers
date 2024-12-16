@@ -8,8 +8,8 @@ const generateRandomFog = (count) => {
     const randomX = Math.random() * 200;
     const randomY = Math.random() * 100;// 垂直方向隨機
     const randomOpacity = Math.random() * 0.5 + 0.3;
-    const randomDuration = Math.random() * 90 + 90; // 90-180秒的動畫
-    const randomSize = Math.random() * 100 + 250; // 100px-250px 粒子大小
+    const randomDuration = Math.random() * 90 + 90; // 120-240秒的動畫
+    const randomSize = Math.random() * 100 + 230; // 100px-250px 粒子大小
 
 
     fogElements.push(

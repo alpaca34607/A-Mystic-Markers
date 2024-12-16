@@ -1,5 +1,4 @@
 @use './variables/' as *;
-
 html,
 
 body,
@@ -148,7 +147,7 @@ textarea {
     
   }
   ::-webkit-scrollbar-thumb { //卷軸手柄
-    background: transparent;
+    background: $grey;
     border: 1px solid $primary-purple ;
     z-index: 1; /* 設置較低的 z-index */
     cursor: default;

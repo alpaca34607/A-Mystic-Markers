@@ -19,9 +19,6 @@ body {
   cursor: none;
 }
 
-
-
-
 /* 重置標題字重 */
 
 h1,
@@ -62,9 +59,6 @@ a {
   text-decoration: none;
   color: white;
 }
-
-
-
 
 /* Menu */
 
@@ -133,7 +127,6 @@ a {
   }
 }
 
-
 .navigation {
   width: 277px;
   display: flex;
@@ -145,7 +138,6 @@ a {
     margin-right: 20px;
     width: 24px;
   }
-  
 
   #menu {
     width: 54px;
@@ -210,22 +202,25 @@ body {
 
   .banner {
     position: relative;
-    background-image: url("/images/home_banner.png");
+    background-image: url("/images/home_banner.jpg");
     background-size: 100%;
     background-position: right top;
     background-repeat: no-repeat;
+    mix-blend-mode: lighten;
+    filter: brightness(105%);
+    overflow: hidden;
 
     width: 100%;
-    min-height: 130vh;
+    min-height: 110vh;
 
-    #fog-masked {
+    #fog-masked-g {
       position: absolute;
       overflow: hidden;
       top: 0;
       left: 0;
-      width: 130vh;
+      width: 100vh;
       height: 100%;
-      z-index: 1;
+      z-index: -2;
       pointer-events: none;
       /* 使用遮罩限制霧的區域 */
       mask-image: url("/images/fog-mask1.png");
@@ -238,37 +233,49 @@ body {
       -webkit-mask-repeat: no-repeat;
       -webkit-mask-size: cover;
 
-      #fog-rotate {
+      #fog-rotate-g {
         position: absolute;
         overflow: hidden;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: 1;
+        z-index: -2;
         transform: rotate(-90deg);
-
-        .fog-area {
+        .fog-area-g {
           position: absolute;
-          pointer-events: none;
+          overflow: hidden;
           top: 0;
-          left: 100px;
+          left: 0;
           width: 100%;
-          height: 100%;
+          height: 100vh;
+          overflow: hidden;
+          z-index: -2;
+          pointer-events: none;
         }
       }
     }
 
-    .fog-area {
+    .fog-area-p {
       position: absolute;
       overflow: hidden;
-      top: 0;
+      top: 0%;
       left: 0;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
+      width:100%;
+      height: 100%;
       z-index: -1;
       pointer-events: none;
+      /* 使用遮罩限制霧的區域 */
+      mask-image: url("/images/fog-mask2.png");
+      mask-repeat: no-repeat;
+      mask-size:auto;
+      mask-position: top 0;
+
+      /* Webkit 瀏覽器支持 */
+      -webkit-mask-image: url("/images/fog-mask2.png");
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: cover;
+      -webkit-mask-position:top 0 ;
     }
 
     .logoXL {
@@ -362,22 +369,21 @@ body {
 
     #intro1 {
       position: relative;
-      position: relative;
       display: flex;
       justify-content: center;
       overflow: hidden;
       width: 100%;
       margin-top: 60px;
       height: auto;
+      min-height: 105vh;
 
       .door {
-        position: relative;
-        top: 0;
+        position: absolute;
+        top: 20%;
         width: 100%;
+        height: 100vh;
         overflow: hidden;
-        min-height: 105vh;
-        height: auto;
-        overflow: hidden;
+        z-index: 4;
 
         figure {
           position: absolute;
@@ -393,19 +399,30 @@ body {
 
         #intro_Q {
           position: absolute;
-          top: 0;
+          top: 0%;
           margin: right 100px;
           right: 25%;
           width: 355px;
           display: column;
+          z-index: 4;
 
           p {
-            
             margin-top: 30px;
             margin-left: 21px;
             @include font-style($font-regular-18);
           }
         }
+      }
+
+      .intro1fog-G{
+        position: absolute;
+        top:-10%;
+        right:-10%;
+        z-index: 0;
+        width:150%;
+        mix-blend-mode: lighten;
+        opacity:0.8;
+        overflow: hidden;
       }
     }
 
@@ -486,8 +503,8 @@ body {
           flex-direction: column;
           width: auto;
           text-align: left;
-          margin-top: 5%;
-          margin-top: 5%;
+          margin-left: 5%;
+          margin-top: 3%;
 
           h4 {
             color: $primary-green;
@@ -496,6 +513,8 @@ body {
 
           p {
             @include font-style($font-medium-18);
+            margin-top: 1rem;
+            margin-bottom: 2rem;
           }
         }
       }
