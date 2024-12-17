@@ -4,7 +4,7 @@ import "../../css/carousel.css";
 const images = [
   "/images/storyintro1.jpg",
   "/images/storyintro2.jpg",
-  "/images/storyintro3.jpg",
+  "images/storyintro3.jpg",
   "/images/storyintro4.jpg",
   "/images/storyintro5.jpg",
 ];

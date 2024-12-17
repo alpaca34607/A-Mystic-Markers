@@ -24,9 +24,29 @@ const App = () => {
   const slideTopRefs = useRef([]);
   const slideRightRefs = useRef([]);
   const slideLeftRefs = useRef([]);
+  const fadeInRefs = useRef([]);
 
   // 淡入動畫
   useEffect(() => {
+    // 只有淡入
+    fadeInRefs.current.forEach((el) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, x: 0 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 50%",
+            end: "top 0%",
+            scrub: false,
+          },
+        }
+      );
+    });
     // 往上淡入
     slideTopRefs.current.forEach((el) => {
       gsap.fromTo(
@@ -98,15 +118,15 @@ const App = () => {
             <main className="home">
               <section className="banner">
                 <Navbar />
-            
-                    <div className="fog-area-p">
-                      <Fog className="purpleFog"/>
-                    </div>
-          
+
+                <div className="fog-area-p">
+                  <Fog className="purpleFog" />
+                </div>
+
                 <div id="fog-masked-g">
                   <div id="fog-rotate-g">
                     <div className="fog-area-g">
-                      <Fog className="greenFog"/>
+                      <Fog className="greenFog" />
                     </div>
                   </div>
                 </div>
@@ -157,7 +177,18 @@ const App = () => {
                       </p>
                     </div>
                   </div>
-                 <img className="intro1fog-G" src="/images/intro1_greenfog.jpg" alt=""/>
+                  <img
+                    src="/images/intro1_purplefog.jpg"
+                    className="intro1fog-P"
+                    ref={(el) => fadeInRefs.current.push(el)}
+                    alt=""
+                  />
+                  <img
+                    src="/images/intro1_greenfog.jpg"
+                    className="intro1fog-G"
+                    ref={(el) => fadeInRefs.current.push(el)}
+                    alt=""
+                  />
                 </div>
                 <div id="intro2">
                   <div
@@ -175,6 +206,7 @@ const App = () => {
                   </div>
                 </div>
                 <div id="intro3">
+                  <img src="/images/intro3_purplefog.jpg"alt="" className="intro3fog-P"/>
                   <div
                     className="title"
                     ref={(el) => slideTopRefs.current.push(el)}
@@ -215,22 +247,22 @@ const App = () => {
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  <div id="intro4">
-                    <div
-                      className="title"
-                      ref={(el) => slideTopRefs.current.push(el)}
-                    >
-                      <SectionTitle originalText="鬼影探索" className="title" />
-                      <h3>
-                        靈異愛好者的專屬交流空間，分享靈異故事、實地探險經驗，
-                        <br />
-                        並討論各類神秘現象，找到志同道合的朋友。
-                      </h3>
-                    </div>
-                    <div ref={(el) => slideTopRefs.current.push(el)}>
-                      <ForumImg />
-                    </div>
+                <div id="intro4">
+                  <div
+                    className="title"
+                    ref={(el) => slideTopRefs.current.push(el)}
+                  >
+                    <SectionTitle originalText="鬼影探索" className="title" />
+                    <h3>
+                      靈異愛好者的專屬交流空間，分享靈異故事、實地探險經驗，
+                      <br />
+                      並討論各類神秘現象，找到志同道合的朋友。
+                    </h3>
+                  </div>
+                  <div ref={(el) => slideTopRefs.current.push(el)}>
+                    <ForumImg />
                   </div>
                 </div>
               </section>

@@ -129,13 +129,12 @@ textarea {
   height: 12px;
   background: transparent;
   border: 1px solid #B595FF;
-  border-radius: 99px;
   z-index: 1; /* 設置較低的 z-index */
   cursor: default;
 }
 
 ::-webkit-scrollbar-button {
-  background: #B3B3B3;
+  background: none;
   width: 12px;
   height: 12px;
   cursor: default;
@@ -201,14 +200,17 @@ textarea {
 /* 重置字體 */
 body {
   position: relative;
-  position: relative;
   font-family: "Noto Sans TC";
   /* 系統預設的無襯線字 */
   font-size: 100%;
   line-height: 1.5;
-  background-color: #333;
   cursor: none;
-  cursor: none;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  background-color: #2A2A2A;
+  color: #ffffff;
+  font-family: "Noto Sans TC", sans-serif;
 }
 
 /* 重置標題字重 */
@@ -239,9 +241,7 @@ img {
 
 /* 重置連接 */
 /* 基本超連結樣式 */
-/* 基本超連結樣式 */
 a {
-  cursor: none;
   cursor: none;
   display: block;
   text-decoration: none;
@@ -312,6 +312,7 @@ a {
 .navigation {
   width: 277px;
   display: flex;
+  align-items: center;
 }
 .navigation #Group {
   margin-right: 20px;
@@ -326,67 +327,49 @@ a {
   margin-left: 15px;
 }
 
-/* 下面指令 */
-/* 定義色彩 */
-:root {
-  --primary-green: #acff6c;
-  --Neutral-grey: #b3b3b3;
-  --Neutral-Black: #2a2a2a;
-  --Neutral-White: #ffffff;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  overflow: auto;
-  overflow: auto;
-  background-color: var(--Neutral-Black);
-  color: #ffffff;
-  font-family: "Noto Sans TC", sans-serif;
-}
-
-.top-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 30px;
-}
-
-.nav-buttons {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-button {
-  color: var(--primary-green);
-  border: none;
-  background: none;
-  font-size: 18px;
-  letter-spacing: 2.7px;
-}
-.nav-button div {
-  display: flex;
-}
-
 /*HOME  */
 .home {
   position: relative;
-  background-image: url("/images/noise.png");
+  width: 100%;
+  height: 100%;
+  background: url("./images/noise.jpg") repeat;
   background-size: auto;
-  background-repeat: repeat;
-  background-blend-mode: hard-light;
+  background-blend-mode: normal;
+  pointer-events: none;
+  z-index: -1;
+  isolation: isolate;
+}
+.home::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -99;
 }
 .home .banner {
   position: relative;
-  background-image: url("/images/home_banner.jpg");
-  background-size: 100%;
+  background: url("./images/home_banner.jpg");
+  background-size: cover;
   background-position: right top;
   background-repeat: no-repeat;
   mix-blend-mode: lighten;
-  filter: brightness(105%);
   overflow: hidden;
   width: 100%;
   min-height: 110vh;
+  z-index: 1;
+}
+.home .banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  pointer-events: none;
+  z-index: -1;
 }
 .home .banner #fog-masked-g {
   position: absolute;
@@ -398,12 +381,12 @@ body {
   z-index: -2;
   pointer-events: none;
   /* 使用遮罩限制霧的區域 */
-  mask-image: url("/images/fog-mask1.png");
+  mask-image: url("./images/fog-mask1.png");
   mask-repeat: no-repeat;
   mask-size: 100% auto;
   mask-position: top 0;
   /* Webkit 瀏覽器支持 */
-  -webkit-mask-image: url("/images/fog-mask1.png");
+  -webkit-mask-image: url("./images/fog-mask1.png");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: cover;
 }
@@ -438,12 +421,12 @@ body {
   z-index: -1;
   pointer-events: none;
   /* 使用遮罩限制霧的區域 */
-  mask-image: url("/images/fog-mask2.png");
+  mask-image: url("./images/fog-mask2.png");
   mask-repeat: no-repeat;
   mask-size: auto;
   mask-position: top 0;
   /* Webkit 瀏覽器支持 */
-  -webkit-mask-image: url("/images/fog-mask2.png");
+  -webkit-mask-image: url("./images/fog-mask2.png");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: cover;
   -webkit-mask-position: top 0;
@@ -578,10 +561,20 @@ body {
   position: absolute;
   top: -10%;
   right: -10%;
-  z-index: 0;
+  z-index: 2;
   width: 150%;
   mix-blend-mode: lighten;
   opacity: 0.8;
+  overflow: hidden;
+}
+.home .intro #intro1 .intro1fog-P {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: 1;
+  width: auto;
+  mix-blend-mode: lighten;
+  opacity: 0.6;
   overflow: hidden;
 }
 .home .intro #intro2 {
@@ -630,33 +623,45 @@ body {
   opacity: 100%;
 }
 .home .intro #intro3 {
+  position: relative;
   display: flex;
   flex-direction: column;
   text-align: center;
   width: 100%;
+  z-index: 1;
+  overflow: visible;
+  mix-blend-mode: lighten;
+}
+.home .intro #intro3 .intro3fog-P {
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 1920px;
+  height: auto;
+  z-index: 1;
 }
 .home .intro #intro3 .map-area {
   display: flex;
   flex-wrap: wrap;
+  flex: 2;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-end;
   width: 100%;
   overflow: hidden;
-  z-index: 1;
+  z-index: 3;
   margin-right: 15%;
   margin-top: 30px;
+  mix-blend-mode: lighten;
 }
 .home .intro #intro3 .map-area img {
   width: 50%;
-  min-width: 600px;
+  min-width: 900px;
 }
 .home .intro #intro3 .map-area .map-intro {
   display: flex;
   flex-direction: column;
   width: auto;
   text-align: left;
-  margin-left: 5%;
-  margin-top: 3%;
 }
 .home .intro #intro3 .map-area .map-intro h4 {
   color: #acff6c;
@@ -672,12 +677,10 @@ body {
   font-size: 1.125rem;
   letter-spacing: 0.18rem;
   line-height: 1.5;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 .home .intro #intro4 {
   margin-top: 200px;
-  margin-bottom: 100px;
   margin-bottom: 100px;
   display: flex;
   flex-direction: column;
@@ -685,6 +688,7 @@ body {
   text-align: center;
   width: 100%;
   overflow: hidden;
+  z-index: -1;
 }
 .home .intro #intro4 .forum-gallery {
   position: relative;
@@ -796,7 +800,7 @@ body {
   position: fixed;
   width: 60px;
   height: 60px;
-  background: url("/images/cursor.svg") no-repeat center/contain;
+  background: url("./images/cursor.svg") no-repeat center/contain;
   pointer-events: none;
   z-index: 99999;
   mix-blend-mode: normal;
@@ -827,14 +831,7 @@ body {
 /* 在 hover 狀態下啟用動畫 */
 a:hover #custom-cursor::after {
   opacity: 1;
-  /* 確保動畫可見 */
   animation: expand 0.5s infinite linear;
-  /* 啟用動畫 */
-}
-
-a:hover + #custom-cursor,
-a:hover ~ #custom-cursor {
-  mix-blend-mode: difference;
 }
 
 #custom-cursor.hovered::after {
@@ -854,11 +851,26 @@ a:hover ~ #custom-cursor {
   }
 }
 footer {
+  position: relative;
   display: inline-block;
   width: 100%;
   height: 350px;
-  background-image: url("/images/footer-paper.png");
+  background: url("./images/footer-paper.jpg");
+  mix-blend-mode: lighten;
+  isolation: isolate;
   background-repeat: no-repeat;
+  z-index: 1;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  pointer-events: none;
+  z-index: -1;
 }
 footer .content {
   display: flex;

@@ -135,12 +135,11 @@ textarea {
     height: 12px; //有水平卷軸時設定
     background: transparent;
     border: 1px solid $primary-purple ;
-    border-radius: 99px;//加圓角時不加上下按鈕才能有圓角
     z-index: 1; /* 設置較低的 z-index */
     cursor: default;
   }
   ::-webkit-scrollbar-button { //上下按鈕
-    background: $grey;
+    background:none;
     width: 12px;//卷軸按鈕寬
     height: 12px;//卷軸按鈕高
     cursor: default;
