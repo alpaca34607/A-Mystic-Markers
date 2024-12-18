@@ -1,6 +1,5 @@
 import "./style.scss";
 // import "../css/style.css";
-import "./style.scss";
 import Navbar from "./component/Navbar";
 import { Link, Route, Routes } from "react-router-dom";
 import Story from "./pages/Storys";
@@ -17,11 +16,13 @@ import Cursor from "./component/Cursor";
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import GotoTop from "./component/GotoTop";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
   const slideTopRefs = useRef([]);
+  const slideTopSRefs = useRef([]);
   const slideRightRefs = useRef([]);
   const slideLeftRefs = useRef([]);
   const fadeInRefs = useRef([]);
@@ -48,7 +49,26 @@ const App = () => {
       );
     });
     // 往上淡入
-    slideTopRefs.current.forEach((el) => {
+    slideTopSRefs.current.forEach((el) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 100 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            end: "top 30%",
+            scrub: false,
+          },
+        }
+      );
+    });
+     // 往上淡入(慢)
+     slideTopRefs.current.forEach((el) => {
       gsap.fromTo(
         el,
         { opacity: 0, y: 100 },
@@ -60,12 +80,13 @@ const App = () => {
           scrollTrigger: {
             trigger: el,
             start: "top 90%",
-            end: "top 50%",
+            end: "top 40%",
             scrub: false,
           },
         }
       );
     });
+
 
     // 往右淡入
     slideRightRefs.current.forEach((el) => {
@@ -79,8 +100,8 @@ const App = () => {
           ease: "power2.out",
           scrollTrigger: {
             trigger: el,
-            start: "top 90%",
-            end: "top 50%",
+            start: "top 80%",
+            end: "top 30%",
             scrub: false,
           },
         }
@@ -99,8 +120,8 @@ const App = () => {
           ease: "power2.out",
           scrollTrigger: {
             trigger: el,
-            start: "top 90%",
-            end: "top 50%",
+            start: "top 80%",
+            end: "top 30%",
             scrub: false,
           },
         }
@@ -116,6 +137,7 @@ const App = () => {
           path="/"
           element={
             <main className="home">
+              <GotoTop/>
               <section className="banner">
                 <Navbar />
 
@@ -201,12 +223,12 @@ const App = () => {
                     </h3>
                   </div>
                   <Intro2Component />
-                  <div ref={(el) => slideTopRefs.current.push(el)}>
+                  <div className="carouselwrapper" ref={(el) => slideTopSRefs.current.push(el)}>
                     <Carousel />
                   </div>
                 </div>
                 <div id="intro3">
-                  <img src="/images/intro3_purplefog.jpg"alt="" className="intro3fog-P"/>
+                  <img src="/images/intro3_purplefog.png"alt=""  ref={(el) => fadeInRefs.current.push(el)} className="intro3fog-P"/>
                   <div
                     className="title"
                     ref={(el) => slideTopRefs.current.push(el)}
@@ -220,7 +242,7 @@ const App = () => {
 
                   <div className="map-area">
                     <img
-                      src="/images/map_intro.jpg"
+                      src="/images/map_intro.png"
                       ref={(el) => slideRightRefs.current.push(el)}
                       alt="Map Intro"
                     />
@@ -261,7 +283,7 @@ const App = () => {
                       並討論各類神秘現象，找到志同道合的朋友。
                     </h3>
                   </div>
-                  <div ref={(el) => slideTopRefs.current.push(el)}>
+                  <div ref={(el) => slideTopSRefs.current.push(el)}>
                     <ForumImg />
                   </div>
                 </div>

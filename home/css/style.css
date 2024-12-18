@@ -250,6 +250,7 @@ a {
 
 /* Menu */
 .Topbar {
+  position: fixed;
   margin: 0;
   margin-top: 0;
   width: 100%;
@@ -258,44 +259,41 @@ a {
   padding: 10px 0px;
   align-items: flex-end;
   justify-content: space-between;
+  z-index: 999;
 }
-
-.logo {
+.Topbar .logo {
   width: 240px;
   margin-right: 20px;
   display: flex;
   align-items: center;
 }
-.logo:hover {
+.Topbar .logo:hover {
   filter: invert(42%) saturate(1352%) hue-rotate(140deg) brightness(120%) contrast(119%);
 }
-.logo img {
+.Topbar .logo img {
   width: 50px;
   margin-right: 8px;
   margin-bottom: 10px;
 }
-
-.logoText {
+.Topbar .logoText {
   font-family: "Playfair Display", serif;
   font-size: 24px;
   color: #acff6c;
 }
-
-.Topbar-right {
+.Topbar .Topbar-right {
   display: flex;
   padding: 0;
   align-items: center;
   margin-left: 115px;
 }
-
-.member {
+.Topbar .member {
   display: flex;
   color: #B595FF;
   margin-left: 20px;
   margin: 8px;
   margin-bottom: 5px;
 }
-.member a {
+.Topbar .member a {
   color: #B595FF;
   font-weight: 400;
   margin: 0 8px;
@@ -304,7 +302,7 @@ a {
   border-left: transparent 1px solid;
   border-right: transparent 1px solid;
 }
-.member a:hover {
+.Topbar .member a:hover {
   border-left: #B595FF 1px solid;
   border-right: #B595FF 1px solid;
 }
@@ -327,6 +325,31 @@ a {
   margin-left: 15px;
 }
 
+.totop {
+  position: fixed;
+  transition: "bottom 0.3s ease";
+  right: 50px;
+  width: 50px;
+  height: 50px;
+  background: url("./images/gototop.svg");
+  background-repeat: no-repeat;
+  background-size: 60px;
+  padding: 60px;
+  border: none;
+  z-index: 999;
+  box-shadow: rgba(0, 0, 0, 0.5);
+  cursor: none;
+}
+.totop:hover {
+  cursor: none;
+  filter: invert(42%) saturate(1352%) hue-rotate(140deg) brightness(120%) contrast(119%);
+}
+.totop:active {
+  transform: translateY(2px);
+  filter: hue-rotate(150deg) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+  cursor: none;
+}
+
 /*HOME  */
 .home {
   position: relative;
@@ -335,18 +358,8 @@ a {
   background: url("./images/noise.jpg") repeat;
   background-size: auto;
   background-blend-mode: normal;
-  pointer-events: none;
-  z-index: -1;
+  z-index: 6;
   isolation: isolate;
-}
-.home::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -99;
 }
 .home .banner {
   position: relative;
@@ -378,7 +391,7 @@ a {
   left: 0;
   width: 100vh;
   height: 100%;
-  z-index: -2;
+  z-index: 0;
   pointer-events: none;
   /* 使用遮罩限制霧的區域 */
   mask-image: url("./images/fog-mask1.png");
@@ -397,7 +410,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -2;
+  z-index: 0;
   transform: rotate(-90deg);
 }
 .home .banner #fog-masked-g #fog-rotate-g .fog-area-g {
@@ -408,7 +421,7 @@ a {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  z-index: -2;
+  z-index: 0;
   pointer-events: none;
 }
 .home .banner .fog-area-p {
@@ -482,7 +495,7 @@ a {
   margin-top: 30px;
   left: 0px;
   margin-bottom: 24px;
-  z-index: 3;
+  z-index: 10;
 }
 .home .intro .title h2 {
   font-family: "Noto Sans TC";
@@ -578,12 +591,25 @@ a {
   overflow: hidden;
 }
 .home .intro #intro2 {
+  position: relative;
   mix-blend-mode: lighten;
-  margin-top: 0;
+  margin-top: 100px;
+  margin-bottom: 100px;
   isolation: isolate;
   text-align: center;
-  overflow: hidden;
+  overflow: visible;
+  z-index: 4;
+  width: 100%;
+  height: 100vh;
   /* 完成動畫後，滑鼠事件接管 transform */
+}
+.home .intro #intro2 .carouselwrapper {
+  position: absolute;
+  top: 30%;
+  left: 0%;
+  z-index: 10;
+  width: 100%;
+  height: auto;
 }
 .home .intro #intro2 .laya-please.interactive {
   transform: none;
@@ -594,8 +620,7 @@ a {
 .home .intro #intro2 .paper1 {
   z-index: 2;
   position: absolute;
-  top: 20vh;
-  top: 20vh;
+  top: -100%;
   left: 100px;
   opacity: 0;
   transform: translateY(50px);
@@ -609,8 +634,7 @@ a {
 }
 .home .intro #intro2 .paper2 {
   position: absolute;
-  top: 120vh;
-  top: 120vh;
+  top: 0%;
   left: 0;
   border: #ffffff 1px;
 }
@@ -628,7 +652,7 @@ a {
   flex-direction: column;
   text-align: center;
   width: 100%;
-  z-index: 1;
+  z-index: 5;
   overflow: visible;
   mix-blend-mode: lighten;
 }
@@ -639,6 +663,7 @@ a {
   width: 1920px;
   height: auto;
   z-index: 1;
+  pointer-events: none;
 }
 .home .intro #intro3 .map-area {
   display: flex;
@@ -651,7 +676,6 @@ a {
   z-index: 3;
   margin-right: 15%;
   margin-top: 30px;
-  mix-blend-mode: lighten;
 }
 .home .intro #intro3 .map-area img {
   width: 50%;
@@ -677,9 +701,11 @@ a {
   font-size: 1.125rem;
   letter-spacing: 0.18rem;
   line-height: 1.5;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 .home .intro #intro4 {
+  position: relative;
   margin-top: 200px;
   margin-bottom: 100px;
   display: flex;
@@ -688,7 +714,7 @@ a {
   text-align: center;
   width: 100%;
   overflow: hidden;
-  z-index: -1;
+  z-index: 5;
 }
 .home .intro #intro4 .forum-gallery {
   position: relative;
@@ -746,7 +772,6 @@ a {
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 .home .intro #intro4 .forum-gallery .image-link:hover {
-  cursor: none;
   cursor: none;
   border: #B595FF solid 3px;
 }
@@ -834,6 +859,11 @@ a:hover #custom-cursor::after {
   animation: expand 0.5s infinite linear;
 }
 
+button:hover ~ #custom-cursor::after {
+  opacity: 1;
+  animation: expand 0.5s infinite linear;
+}
+
 #custom-cursor.hovered::after {
   opacity: 1;
   animation: expand 2.5s infinite linear;
@@ -858,8 +888,13 @@ footer {
   background: url("./images/footer-paper.jpg");
   mix-blend-mode: lighten;
   isolation: isolate;
+  background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
+  align-items: flex-end;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
 }
 footer::before {
   content: "";
@@ -881,9 +916,10 @@ footer .content {
 }
 footer .content img {
   margin-top: 70px;
-  margin-right: 135px;
+  margin-right: 5%;
   display: block;
   width: 300px;
+  min-width: 300px;
   mix-blend-mode: exclusion;
 }
 footer .content .left {

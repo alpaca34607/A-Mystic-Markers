@@ -4,7 +4,7 @@ import "../../css/carousel.css";
 const images = [
   "/images/storyintro1.jpg",
   "/images/storyintro2.jpg",
-  "images/storyintro3.jpg",
+  "/images/storyintro3.jpg",
   "/images/storyintro4.jpg",
   "/images/storyintro5.jpg",
 ];
@@ -45,6 +45,7 @@ const Carousel = () => {
           </div>
         ))}
       </div>
+   
       <div className="buttons">
         <button className="icon-btn" onClick={() => moveToSelected("prev")}><img src="/images/arrow_L.svg" alt="prev" className='icon-img'/></button>
         <button className="icon-btn"onClick={() => moveToSelected("next")}><img src="/images/arrow_R.svg" alt="next" className='icon-img' /></button>

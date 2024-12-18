@@ -1,8 +1,9 @@
 #carousel-area {
   position: relative;
   overflow: hidden;
+  top:50%;
   height: auto;
-  cursor: none;
+  cursor: inherit;
 }
 
 
@@ -160,12 +161,12 @@
   background: none;
   border: none;
   transition: all 0.3s ease;
+  cursor: inherit;
 }
 
 .buttons .icon-btn .icon-img {
   background: none;
   border: none;
-  cursor: pointer;
   width: 40px;
   height: 40px;
   margin: 0 25px;
@@ -174,11 +175,13 @@
 }
 
 .buttons .icon-btn:hover .icon-img {
-  cursor: none;
-  filter: hue-rotate(150deg);
+
+  filter: invert(42%) saturate(1352%) hue-rotate(140deg) brightness(120%)
+        contrast(119%);
 }
 .buttons .icon-btn:active .icon-img {
   transform: translateY(2px);
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
-  cursor: none;
+  filter:  hue-rotate(150deg) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
 }
+
+
