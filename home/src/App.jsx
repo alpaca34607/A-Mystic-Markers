@@ -41,8 +41,8 @@ const App = () => {
           ease: "power2.out",
           scrollTrigger: {
             trigger: el,
-            start: "top 50%",
-            end: "top 0%",
+            start: "top 80%",
+            end: "top 30%",
             scrub: false,
           },
         }
