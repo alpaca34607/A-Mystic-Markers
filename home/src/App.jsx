@@ -1,22 +1,22 @@
 import "./style.scss";
 // import "../css/style.css";
-import Navbar from "./component/Navbar";
+import Navbar from "./components/Navbar";
 import { Link, Route, Routes } from "react-router-dom";
 import Story from "./pages/Story";
 import Map from "./pages/Map";
 import Contact from "./pages/Contact";
 import Forum from "./pages/Forum";
-import GlowingText from "./component/GlowingText";
-import Intro2Component from "./component/Intro2Component";
-import Carousel from "./component/Carousel";
-import ForumImg from "./component/ForumImg";
-import Fog from "./component/Fog";
-import SectionTitle from "./component/SectionTitle";
-import Cursor from "./component/Cursor";
+import GlowingText from "./components/GlowingText";
+import Intro2Component from "./components/Intro2Component";
+import Carousel from "./components/Carousel";
+import ForumImg from "./components/ForumImg";
+import Fog from "./components/Fog";
+import SectionTitle from "./components/SectionTitle";
+import Cursor from "./components/Cursor";
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import GotoTop from "./component/GotoTop";
+import GotoTop from "./components/GotoTop";
 
 gsap.registerPlugin(ScrollTrigger);
 
