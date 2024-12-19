@@ -2,7 +2,7 @@ import "./style.scss";
 // import "../css/style.css";
 import Navbar from "./component/Navbar";
 import { Link, Route, Routes } from "react-router-dom";
-import Story from "./pages/Storys";
+import Story from "./pages/Story";
 import Map from "./pages/Map";
 import Contact from "./pages/Contact";
 import Forum from "./pages/Forum";
