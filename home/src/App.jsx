@@ -48,7 +48,7 @@ const App = () => {
         }
       );
     });
-    // 往上淡入
+    // 往上淡入(慢)
     slideTopSRefs.current.forEach((el) => {
       gsap.fromTo(
         el,
@@ -56,7 +56,7 @@ const App = () => {
         {
           opacity: 1,
           y: 0,
-          duration: 1.5,
+          duration: 2.5,
           ease: "power2.out",
           scrollTrigger: {
             trigger: el,
@@ -67,7 +67,7 @@ const App = () => {
         }
       );
     });
-     // 往上淡入(慢)
+     // 往上淡入
      slideTopRefs.current.forEach((el) => {
       gsap.fromTo(
         el,
@@ -154,7 +154,7 @@ const App = () => {
                 </div>
 
                 <div
-                  ref={(el) => slideTopRefs.current.push(el)}
+                  ref={(el) => slideTopSRefs.current.push(el)}
                   className="logoXL"
                 >
                   <Link to="/">
