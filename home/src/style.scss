@@ -711,7 +711,7 @@ a:hover #custom-cursor::after {
   opacity: 1;
   animation: expand 0.5s infinite linear;
 }
-button:hover ~ #custom-cursor::after {
+button:hover  #custom-cursor::after {
   opacity: 1;
   animation: expand 0.5s infinite linear;
 }

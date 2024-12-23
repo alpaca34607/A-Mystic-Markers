@@ -137,7 +137,9 @@ const App = () => {
           path="/"
           element={
             <main className="home">
+              <div className="custom-btn">
               <GotoTop/>
+              </div>
               <section className="banner">
                 <Navbar />
 
