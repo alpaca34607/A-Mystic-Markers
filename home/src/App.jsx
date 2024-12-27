@@ -132,6 +132,7 @@ const App = () => {
   return (
     <>
       <Cursor />
+      <Navbar />
       <Routes>
         <Route
           path="/"
@@ -141,7 +142,7 @@ const App = () => {
               <GotoTop/>
               </div>
               <section className="banner">
-                <Navbar />
+                
 
                 <div className="fog-area-p">
                   <Fog className="purpleFog" />

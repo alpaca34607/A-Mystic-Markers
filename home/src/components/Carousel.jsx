@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import "../../css/carousel.css";
 
 const images = [
-  "/images/storyintro1.jpg",
-  "/images/storyintro2.jpg",
-  "/images/storyintro3.jpg",
-  "/images/storyintro4.jpg",
-  "/images/storyintro5.jpg",
+  { src: "/images/storyintro1.jpg", alt: "黃色小飛俠", link: "#Story" },
+  { src: "/images/storyintro2.jpg", alt: "山羊人", link: "#Story" },
+  { src: "/images/storyintro3.jpg", alt: "紅衣小女孩", link: "#Story" },
+  { src: "/images/storyintro4.jpg", alt: "每月精選文章", link: "#Story" },
+  { src: "/images/storyintro5.jpg", alt: "宮燈姊姊", link: "#Story" },
+
 ];
 
 const Carousel = () => {
@@ -32,23 +33,25 @@ const Carousel = () => {
     if (relativeIndex === images.length - 2) return "prevLeftSecond";
     return relativeIndex > 2 ? "hideRight" : "hideLeft";
   };
-  
+
 
   return (
     <div id="carousel-area">
       <div id="carousel">
-        {images.map((src, index) => (
+        {images.map((image, index) => (
           <div className={getClassName(index)} key={index}>
+
             <div className="img-wrap">
-            <img src={src} alt={`Carousel item ${index}`} />
-          </div>
+              <span className="img-text">{image.alt}</span>
+              <img src={image.src} alt={image.alt} />
+            </div>
           </div>
         ))}
       </div>
-   
+
       <div className="buttons">
-        <button className="icon-btn" onClick={() => moveToSelected("prev")}><img src="/images/arrow_L.svg" alt="prev" className='icon-img'/></button>
-        <button className="icon-btn"onClick={() => moveToSelected("next")}><img src="/images/arrow_R.svg" alt="next" className='icon-img' /></button>
+        <button className="icon-btn" onClick={() => moveToSelected("prev")}><img src="/images/arrow_L.svg" alt="prev" className='icon-img' /></button>
+        <button className="icon-btn" onClick={() => moveToSelected("next")}><img src="/images/arrow_R.svg" alt="next" className='icon-img' /></button>
       </div>
     </div>
   );
