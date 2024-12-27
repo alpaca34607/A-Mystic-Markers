@@ -203,13 +203,13 @@ const App = () => {
                     </div>
                   </div>
                   <img
-                    src="/images/intro1_purplefog.jpg"
+                    src="/images/intro1_purplefog.png"
                     className="intro1fog-P"
                     ref={(el) => fadeInRefs.current.push(el)}
                     alt=""
                   />
                   <img
-                    src="/images/intro1_greenfog.jpg"
+                    src="/images/intro1_greenfog.png"
                     className="intro1fog-G"
                     ref={(el) => fadeInRefs.current.push(el)}
                     alt=""

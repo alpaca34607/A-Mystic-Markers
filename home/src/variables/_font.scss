@@ -20,6 +20,12 @@ $font-medium-14: (
   font-size: 0.875rem, // 14px
   letter-spacing: 0.1rem // 10%
 );
+$font-regular-14: (
+  font-family: $Chinese,
+  font-weight: 300,
+  font-size: 0.875rem, // 14px
+  letter-spacing: 0.1rem // 10%
+);
 
 $font-medium-16: (
   font-family: $Chinese,
@@ -67,6 +73,14 @@ $font-medium-24: (
   font-family: $Chinese,
   font-weight: 500,
   font-size: 1.5rem, // 24px
+  letter-spacing: 0.18rem, // 15%
+  line-height: 1.5 // 150%
+);
+
+$font-medium-20: (
+  font-family: $Chinese,
+  font-weight: 500,
+  font-size: 1.375rem, // 22px
   letter-spacing: 0.18rem, // 15%
   line-height: 1.5 // 150%
 );

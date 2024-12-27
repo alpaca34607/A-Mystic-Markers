@@ -9,7 +9,7 @@ const generateRandomFog = (count) => {
     const randomY = Math.random() * 100;// 垂直方向隨機
     const randomOpacity = Math.random() * 0.5 + 0.3;
     const randomDuration = Math.random() * 90 + 90; // 120-240秒的動畫
-    const randomSize = Math.random() * 100 + 230; // 100px-250px 粒子大小
+    const randomSize = Math.random() * 100 + 250; // 100px-250px 粒子大小
 
 
     fogElements.push(
@@ -34,7 +34,7 @@ const generateRandomFog = (count) => {
 const Fog = ({ className }) => {
   return (
     <div className={`fog-container ${className}`}>
-      {generateRandomFog(100)} {/* 調整粒子數量 */}
+      {generateRandomFog(40)} {/* 調整粒子數量 */}
     </div>
   );
 };
