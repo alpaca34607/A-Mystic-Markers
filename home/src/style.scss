@@ -64,14 +64,16 @@ a {
 
 .Topbar {
   position: fixed;
+  top:0;
+  left:0;
   width: 100%;
   height: auto;
   display: flex;
-  padding: 60px 0 110px 0;
+  padding: 60px 0 20px 0;
   align-items: flex-start;
   justify-content: space-between;
   overflow: visible;
-  background: linear-gradient(to bottom, rgba(42, 42, 42, 1) 40%,rgba(42, 42, 42, 0) 90%);
+  background: linear-gradient(to bottom, rgba(42, 42, 42, 1) 20%,rgba(42, 42, 42, 0) 90%);
   z-index: 998;
 
   .logo {
@@ -1055,7 +1057,7 @@ button:hover  #custom-cursor::after {
   }
 }
 
-/* 定義動畫 */
+/* 滑鼠hover連結動畫 */
 @keyframes expand {
   0% {
     transform: translate(-50%, -50%) scale(0.5);
@@ -1160,7 +1162,7 @@ footer {
   }
 }
 
-/* glowEffect 5s linear infinite(發光效果放入css) */
+/*發光效果*/
 @keyframes glowEffect-W {
   0% {
     filter: drop-shadow(0 0 5px #ffffff) drop-shadow(0 0 10px #ffffff54);
@@ -1202,7 +1204,7 @@ footer {
     colorChange 2s ease-in-out infinite;
 }
 
-/* animation:  rotateY 6s ease-in-out infinitee(旋轉效果放入css) */
+/* logo旋轉 */
 @keyframes rotateY {
   0% {
     transform: rotateY(0deg);

@@ -2,8 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Handjet:wght@100..900&family=Mina&family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Zen+Maru+Gothic&display=swap");
 html,
 body,
-div,
-span,
 applet,
 object,
 iframe,
@@ -251,14 +249,16 @@ a {
 /* Menu */
 .Topbar {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: auto;
   display: flex;
-  padding: 60px 0 110px 0;
+  padding: 60px 0 20px 0;
   align-items: flex-start;
   justify-content: space-between;
   overflow: visible;
-  background: linear-gradient(to bottom, rgb(42, 42, 42) 40%, rgba(42, 42, 42, 0) 90%);
+  background: linear-gradient(to bottom, rgb(42, 42, 42) 20%, rgba(42, 42, 42, 0) 90%);
   z-index: 998;
   /* 整體視窗背景遮罩 */
   /* 主視窗 */
@@ -1155,7 +1155,7 @@ button:hover #custom-cursor::after {
   animation: expand 2.5s infinite linear;
 }
 
-/* 定義動畫 */
+/* 滑鼠hover連結動畫 */
 @keyframes expand {
   0% {
     transform: translate(-50%, -50%) scale(0.5);
@@ -1250,7 +1250,7 @@ footer .content .left .link li a:hover {
     opacity: 1;
   }
 }
-/* glowEffect 5s linear infinite(發光效果放入css) */
+/*發光效果*/
 @keyframes glowEffect-W {
   0% {
     filter: drop-shadow(0 0 5px #ffffff) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3294117647));
@@ -1285,7 +1285,7 @@ footer .content .left .link li a:hover {
   animation: glowEffect 1.5s ease-in-out infinite, colorChange 2s ease-in-out infinite;
 }
 
-/* animation:  rotateY 6s ease-in-out infinitee(旋轉效果放入css) */
+/* logo旋轉 */
 @keyframes rotateY {
   0% {
     transform: rotateY(0deg);
