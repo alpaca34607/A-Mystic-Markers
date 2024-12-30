@@ -710,6 +710,7 @@ a {
       margin-top: 60px;
       height: auto;
       min-height: 105vh;
+      overflow: visible;
 
       .door {
         position: absolute;
@@ -718,6 +719,7 @@ a {
         height: 100vh;
         overflow: hidden;
         z-index: 4;
+        overflow: visible;
 
         figure {
           position: absolute;
